@@ -17,11 +17,28 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
         private void groupBox2_Enter(object sender, EventArgs e)
         {
 
         }
 
-        
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+
+        }
+
+        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
+        {
+
+        }
+
+        private void loaddatafordate()
+        {
+
+        }
     }
 }
