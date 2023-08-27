@@ -5,7 +5,7 @@ namespace pathfinder
 {
     internal class iterary
 	{
-		internal void additeraryitems(string input)
+		internal static void additeraryitems(string input) // class as of 20230827 should add a test item into the Current Iterary's Item Field ---JS 20230827
 		{
 			List<string> sidelist = new List<string>();
             

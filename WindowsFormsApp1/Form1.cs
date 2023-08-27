@@ -45,7 +45,7 @@ namespace pathfinder
          */
         public void curiterary_Click(object sender, EventArgs e)
         {
-            //var test = iterary.additeraryitems("test");
+            
         }
 
         

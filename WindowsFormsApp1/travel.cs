@@ -1,11 +1,11 @@
 ﻿using System;
 
 namespace pathfinder { 
-
+    // praise whatever God(s) you choose or don't, regardless, pls pls pls pls!! do not remove static keywords!!!!! ---JS 20230827
 public class travel
 {
-    public struct coord //inates, used to simplify saving of precise location data
-    {
+    public struct coord //inates, used to simplify saving of precise location data ---JS 20230827
+        {
         public static string[] Coords(string Latitude, string Longitude, string cntrycode)
         {  // import and set for struct
             latitude = Latitude;
@@ -14,11 +14,11 @@ public class travel
             string[] coordinates = { latitude, longitude, countrycode };
             return coordinates;
         }
-        public static string latitude { get; set; } // first number in a GPS/GLONASS/etc coordinate string
-        public static string longitude { get; set; } // second number in a GPS/GLONASS/etc coordinate string
+        public static string latitude { get; set; } // first number in a GPS/GLONASS/etc coordinate string ---JS 20230827
+        public static string longitude { get; set; } // second number in a GPS/GLONASS/etc coordinate string ---JS 20230827
         public static string countrycode { get; set; } //intended for ISO 3166-1 alpha-3 codes
         // TODO: https://gist.github.com/tadast/8827699 turn this into a data file that i can import data from ---JS 20230826
-        // public override readonly string ToString() => $"({latitude}, {longitude})";
+        // public override readonly string ToString() => $"({latitude}, {longitude})";---JS 20230827
         // lamnda function to spit out quick coords for later api integration, can not change structure data ---JS 20230826
     }
 
@@ -53,7 +53,7 @@ public class travel
 
     public void traveltrain(string lat0, string lon0, string ccode0, string lat1, string lon1, string ccode1)
     {
-        bool isintltravel; // if the country passes between countries, may not be optimal for special travel agreements, such as the Schengen area
+        bool isintltravel; // if the country passes between countries, may not be optimal for special travel agreements, such as the Schengen area ---JS 20230827
         bool isAintltravel(bool result) => isintltravel = result;
 
         bool isovernight; // if the travel method happens overnight and requires a sleeper bunk
@@ -65,14 +65,14 @@ public class travel
 
     public void travelbus(string lat0, string lon0, string ccode0, string lat1, string lon1, string ccode1)
     {
-        bool isintltravel; // if the country passes between countries, may not be optimal for special travel agreements, such as the Schengen area
+        bool isintltravel; // if the country passes between countries, may not be optimal for special travel agreements, such as the Schengen area ---JS 20230827
         bool isAintltravel(bool result) => isintltravel = result;
 
-        bool isovernight; // if the travel method happens overnight and requires a sleeper bunk
+        bool isovernight; // if the travel method happens overnight and requires a sleeper bunk ---JS 20230827
         bool isAovernight(bool result) => isovernight = result;
 
-        //var startlocation = coord(lat0, lon0, ccode0);
-        //var finallocation = coord(lat1, lon1, ccode1);
+        var startlocation = coord.Coords(lat0, lon0, ccode0); 
+        var finallocation = coord.Coords(lat1, lon1, ccode1);
     }
 
     public void travelauto(string lat0, string lon0, string ccode0, string lat1, string lon1, string ccode1)
@@ -89,14 +89,14 @@ public class travel
         bool isovernight; // if the travel method happens overnight and requires a sleeper bunk
         bool isAovernight(bool result) => isovernight = result;
 
-        //var startlocation = coord(lat0, lon0, ccode0);
-        //var finallocation = coord(lat1, lon1, ccode1);
+        var startlocation = coord.Coords(lat0, lon0, ccode0); 
+        var finallocation = coord.Coords(lat1, lon1, ccode1);
     }
-    /*
-    public void Testitem(string teststring0);
+    
+    public void testitem(string teststring0)
     {
-        string this.teststring = teststring0;
+        string teststring = teststring0;
     }
-    */
+    
     }
 }
