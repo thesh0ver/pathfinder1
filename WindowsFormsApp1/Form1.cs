@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1
+namespace pathfinder
 {
     public partial class Form1 : Form
     {
@@ -16,7 +16,7 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
-                private void groupBox1_Enter(object sender, EventArgs e)
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }
@@ -39,7 +39,13 @@ namespace WindowsFormsApp1
         {
 
         }
-
-        
+        /* the following codes quality is of the same objective quality of loose, syruppy, diarrhea 
+         * of a dying persons last bowel movement, but must stay for the time being, in spite of the errors
+         *  --- JS 20230826
+         */
+        public void curiterary_Click(object sender, EventArgs e)
+        {
+            //var test = iterary.additeraryitems("test");
+        }
     }
 }
