@@ -48,9 +48,6 @@ namespace pathfinder
             //var test = iterary.additeraryitems("test");
         }
 
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
+        
     }
 }
