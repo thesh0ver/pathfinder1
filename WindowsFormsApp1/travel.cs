@@ -6,7 +6,7 @@ public class travel
 {
     public struct coord //inates, used to simplify saving of precise location data
     {
-        public string[] Coords(string Latitude, string Longitude, string cntrycode)
+        public static string[] Coords(string Latitude, string Longitude, string cntrycode)
         {  // import and set for struct
             latitude = Latitude;
             longitude = Longitude;
@@ -14,9 +14,9 @@ public class travel
             string[] coordinates = { latitude, longitude, countrycode };
             return coordinates;
         }
-        public string latitude { get; set; } // first number in a GPS/GLONASS/etc coordinate string
-        public string longitude { get; set; } // second number in a GPS/GLONASS/etc coordinate string
-        public string countrycode { get; set; } //intended for ISO 3166-1 alpha-3 codes
+        public static string latitude { get; set; } // first number in a GPS/GLONASS/etc coordinate string
+        public static string longitude { get; set; } // second number in a GPS/GLONASS/etc coordinate string
+        public static string countrycode { get; set; } //intended for ISO 3166-1 alpha-3 codes
         // TODO: https://gist.github.com/tadast/8827699 turn this into a data file that i can import data from ---JS 20230826
         // public override readonly string ToString() => $"({latitude}, {longitude})";
         // lamnda function to spit out quick coords for later api integration, can not change structure data ---JS 20230826
@@ -24,7 +24,8 @@ public class travel
 
     public struct AirTravel
     { // import and set for struct
-        
+        public static string startingairportcode { get; set; }
+        public static string destinationairportcode { get; set; }
         public static string[] AirTravelsetter(string strtPortCode, string destPortCode) // https://www.iata.org/en/publications/directories/code-search <= for IATA codes
         { // need to choose between 3 letter IATA codes or 4 letter ICAO codes
             startingairportcode = strtPortCode;
@@ -32,8 +33,6 @@ public class travel
             string[] ports = { strtPortCode, destPortCode };
             return ports;
         } // https://airportcodes.aero/ <= for ICAO codes
-        public string startingairportcode { get; set; }
-        public string destinationairportcode { get; set; }
         // may not be needed, alternatively may need refactoring ---js 20230827
         public readonly override string ToString() => $"({startingairportcode}, {destinationairportcode})";
     }
