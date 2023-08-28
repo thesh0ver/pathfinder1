@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace pathfinder
 {
-    public partial class Form1 : Form
+    public partial class mainformbox : Form
     {
-        public Form1()
+        public mainformbox()
         {
             InitializeComponent();
         }
@@ -48,6 +48,9 @@ namespace pathfinder
             
         }
 
-        
+        private void iterlist_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

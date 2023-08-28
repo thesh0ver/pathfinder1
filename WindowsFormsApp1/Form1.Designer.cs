@@ -1,6 +1,6 @@
 ﻿namespace pathfinder
 {
-    partial class Form1
+    partial class mainformbox
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("april is the cruellest month");
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("breeding lilacs out of the dead land");
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("mixing memory and desire");
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("stirring dull roots with spring rain");
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.curiterary = new System.Windows.Forms.Label();
             this.iterarycalendar = new System.Windows.Forms.MonthCalendar();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.iterlist = new System.Windows.Forms.ListView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,6 +44,10 @@
             this.loadIteraryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.iteraryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addTravelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.flightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.trainToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.busToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.otherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addDestinationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeTravelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeDestinationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,10 +59,6 @@
             this.calendarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.figureItOutYourselfToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.flightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.trainToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.busToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.otherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -63,7 +67,7 @@
             // 
             this.groupBox1.Controls.Add(this.curiterary);
             this.groupBox1.Controls.Add(this.iterarycalendar);
-            this.groupBox1.Controls.Add(this.listView1);
+            this.groupBox1.Controls.Add(this.iterlist);
             this.groupBox1.Location = new System.Drawing.Point(12, 27);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(243, 710);
@@ -91,14 +95,19 @@
             this.iterarycalendar.TabIndex = 1;
             this.iterarycalendar.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
             // 
-            // listView1
+            // iterlist
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(6, 203);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(227, 501);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.iterlist.HideSelection = false;
+            this.iterlist.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem1,
+            listViewItem2,
+            listViewItem3,
+            listViewItem4});
+            this.iterlist.Location = new System.Drawing.Point(6, 203);
+            this.iterlist.Name = "iterlist";
+            this.iterlist.Size = new System.Drawing.Size(227, 501);
+            this.iterlist.TabIndex = 0;
+            this.iterlist.UseCompatibleStateImageBehavior = false;
             // 
             // groupBox2
             // 
@@ -123,7 +132,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(1045, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
-            
             // 
             // settingsToolStripMenuItem
             // 
@@ -143,13 +151,13 @@
             // saveIteraryToolStripMenuItem
             // 
             this.saveIteraryToolStripMenuItem.Name = "saveIteraryToolStripMenuItem";
-            this.saveIteraryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveIteraryToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.saveIteraryToolStripMenuItem.Text = "Save Iterary";
             // 
             // loadIteraryToolStripMenuItem
             // 
             this.loadIteraryToolStripMenuItem.Name = "loadIteraryToolStripMenuItem";
-            this.loadIteraryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.loadIteraryToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.loadIteraryToolStripMenuItem.Text = "Load Iterary";
             // 
             // iteraryToolStripMenuItem
@@ -176,6 +184,30 @@
             this.addTravelToolStripMenuItem.Name = "addTravelToolStripMenuItem";
             this.addTravelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.addTravelToolStripMenuItem.Text = "Add Travel";
+            // 
+            // flightToolStripMenuItem
+            // 
+            this.flightToolStripMenuItem.Name = "flightToolStripMenuItem";
+            this.flightToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
+            this.flightToolStripMenuItem.Text = "Flight";
+            // 
+            // trainToolStripMenuItem
+            // 
+            this.trainToolStripMenuItem.Name = "trainToolStripMenuItem";
+            this.trainToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
+            this.trainToolStripMenuItem.Text = "Train";
+            // 
+            // busToolStripMenuItem
+            // 
+            this.busToolStripMenuItem.Name = "busToolStripMenuItem";
+            this.busToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
+            this.busToolStripMenuItem.Text = "Bus";
+            // 
+            // otherToolStripMenuItem
+            // 
+            this.otherToolStripMenuItem.Name = "otherToolStripMenuItem";
+            this.otherToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
+            this.otherToolStripMenuItem.Text = "Other";
             // 
             // addDestinationToolStripMenuItem
             // 
@@ -248,31 +280,7 @@
             this.figureItOutYourselfToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.figureItOutYourselfToolStripMenuItem.Text = "Figure It out yourself";
             // 
-            // flightToolStripMenuItem
-            // 
-            this.flightToolStripMenuItem.Name = "flightToolStripMenuItem";
-            this.flightToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.flightToolStripMenuItem.Text = "Flight";
-            // 
-            // trainToolStripMenuItem
-            // 
-            this.trainToolStripMenuItem.Name = "trainToolStripMenuItem";
-            this.trainToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.trainToolStripMenuItem.Text = "Train";
-            // 
-            // busToolStripMenuItem
-            // 
-            this.busToolStripMenuItem.Name = "busToolStripMenuItem";
-            this.busToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.busToolStripMenuItem.Text = "Bus";
-            // 
-            // otherToolStripMenuItem
-            // 
-            this.otherToolStripMenuItem.Name = "otherToolStripMenuItem";
-            this.otherToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.otherToolStripMenuItem.Text = "Other";
-            // 
-            // Form1
+            // mainformbox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -281,7 +289,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Name = "mainformbox";
             this.Text = "Talisha\'s Tentative Travel Planning System";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -296,7 +304,7 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView iterlist;
         private System.Windows.Forms.MonthCalendar iterarycalendar;
         private System.Windows.Forms.Label curiterary;
         private System.Windows.Forms.MenuStrip menuStrip1;
