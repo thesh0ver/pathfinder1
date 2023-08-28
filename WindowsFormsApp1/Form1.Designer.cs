@@ -59,6 +59,7 @@
             this.calendarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.figureItOutYourselfToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exampleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -151,13 +152,13 @@
             // saveIteraryToolStripMenuItem
             // 
             this.saveIteraryToolStripMenuItem.Name = "saveIteraryToolStripMenuItem";
-            this.saveIteraryToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.saveIteraryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saveIteraryToolStripMenuItem.Text = "Save Iterary";
             // 
             // loadIteraryToolStripMenuItem
             // 
             this.loadIteraryToolStripMenuItem.Name = "loadIteraryToolStripMenuItem";
-            this.loadIteraryToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.loadIteraryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.loadIteraryToolStripMenuItem.Text = "Load Iterary";
             // 
             // iteraryToolStripMenuItem
@@ -269,7 +270,8 @@
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.figureItOutYourselfToolStripMenuItem});
+            this.figureItOutYourselfToolStripMenuItem,
+            this.exampleToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
@@ -279,6 +281,12 @@
             this.figureItOutYourselfToolStripMenuItem.Name = "figureItOutYourselfToolStripMenuItem";
             this.figureItOutYourselfToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.figureItOutYourselfToolStripMenuItem.Text = "Figure It out yourself";
+            // 
+            // exampleToolStripMenuItem
+            // 
+            this.exampleToolStripMenuItem.Name = "exampleToolStripMenuItem";
+            this.exampleToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.exampleToolStripMenuItem.Text = "example";
             // 
             // mainformbox
             // 
@@ -329,6 +337,7 @@
         private System.Windows.Forms.ToolStripMenuItem trainToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem busToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem otherToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exampleToolStripMenuItem;
     }
 }
 
