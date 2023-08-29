@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace pathfinder
 {
@@ -61,6 +62,17 @@ namespace pathfinder
         private void testToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void testsubmit_Click(object sender, EventArgs e)
+        { // passes information from the textbox to save function under testing --- JS 20230828
+            string itinerary = textBox1.Text;
+            Program.saveitinerary(itinerary);
         }
     }
 }
