@@ -52,5 +52,15 @@ namespace pathfinder
         {
 
         }
+
+        private void theNuclearOptionDONOTUSETESTONLYToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            iterlist.Items.Clear();
+        }
+
+        private void testToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
