@@ -62,5 +62,15 @@ namespace pathfinder
         {
 
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void testsubmit_Click(object sender, EventArgs e)
+        {
+            Program.saveitinerary();
+        }
     }
 }

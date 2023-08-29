@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("april is the cruellest month");
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("breeding lilacs out of the dead land");
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("mixing memory and desire");
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("stirring dull roots with spring rain");
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("april is the cruellest month");
+            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("breeding lilacs out of the dead land");
+            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem("mixing memory and desire");
+            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem("stirring dull roots with spring rain");
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.curiterary = new System.Windows.Forms.Label();
             this.iterarycalendar = new System.Windows.Forms.MonthCalendar();
@@ -61,6 +61,8 @@
             this.calendarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.figureItOutYourselfToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.testlabel = new System.Windows.Forms.Label();
+            this.testsubmit = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -101,10 +103,10 @@
             // 
             this.iterlist.HideSelection = false;
             this.iterlist.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2,
-            listViewItem3,
-            listViewItem4});
+            listViewItem5,
+            listViewItem6,
+            listViewItem7,
+            listViewItem8});
             this.iterlist.Location = new System.Drawing.Point(6, 203);
             this.iterlist.Name = "iterlist";
             this.iterlist.Size = new System.Drawing.Size(227, 501);
@@ -115,7 +117,7 @@
             // 
             this.groupBox2.Location = new System.Drawing.Point(261, 27);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(772, 710);
+            this.groupBox2.Size = new System.Drawing.Size(516, 710);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Details";
@@ -298,11 +300,33 @@
             this.figureItOutYourselfToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.figureItOutYourselfToolStripMenuItem.Text = "Figure It out yourself";
             // 
+            // testlabel
+            // 
+            this.testlabel.AutoSize = true;
+            this.testlabel.Location = new System.Drawing.Point(805, 52);
+            this.testlabel.Name = "testlabel";
+            this.testlabel.Size = new System.Drawing.Size(46, 13);
+            this.testlabel.TabIndex = 3;
+            this.testlabel.Text = "testlabel";
+            this.testlabel.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // testsubmit
+            // 
+            this.testsubmit.Location = new System.Drawing.Point(923, 126);
+            this.testsubmit.Name = "testsubmit";
+            this.testsubmit.Size = new System.Drawing.Size(75, 23);
+            this.testsubmit.TabIndex = 4;
+            this.testsubmit.Text = "submit";
+            this.testsubmit.UseVisualStyleBackColor = true;
+            this.testsubmit.Click += new System.EventHandler(this.testsubmit_Click);
+            // 
             // mainformbox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1045, 749);
+            this.Controls.Add(this.testsubmit);
+            this.Controls.Add(this.testlabel);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
@@ -349,6 +373,8 @@
         public System.Windows.Forms.ToolStripMenuItem otherToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem theNuclearOptionDONOTUSETESTONLYToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
+        private System.Windows.Forms.Label testlabel;
+        private System.Windows.Forms.Button testsubmit;
     }
 }
 
