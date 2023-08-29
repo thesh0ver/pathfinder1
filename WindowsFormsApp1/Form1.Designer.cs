@@ -1,6 +1,6 @@
 ﻿namespace pathfinder
 {
-    partial class mainformbox
+    public partial class mainformbox
     {
         /// <summary>
         /// Required designer variable.
@@ -48,6 +48,7 @@
             this.trainToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.busToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.otherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addDestinationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeTravelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeDestinationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,10 +57,10 @@
             this.groupOptionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeGroupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.refreshGroupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.theNuclearOptionDONOTUSETESTONLYToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.calendarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.figureItOutYourselfToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exampleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -152,13 +153,13 @@
             // saveIteraryToolStripMenuItem
             // 
             this.saveIteraryToolStripMenuItem.Name = "saveIteraryToolStripMenuItem";
-            this.saveIteraryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveIteraryToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.saveIteraryToolStripMenuItem.Text = "Save Iterary";
             // 
             // loadIteraryToolStripMenuItem
             // 
             this.loadIteraryToolStripMenuItem.Name = "loadIteraryToolStripMenuItem";
-            this.loadIteraryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.loadIteraryToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.loadIteraryToolStripMenuItem.Text = "Load Iterary";
             // 
             // iteraryToolStripMenuItem
@@ -170,7 +171,8 @@
             this.removeDestinationToolStripMenuItem,
             this.groupToolStripMenuItem,
             this.groupDestinationToolStripMenuItem,
-            this.groupOptionsToolStripMenuItem});
+            this.groupOptionsToolStripMenuItem,
+            this.theNuclearOptionDONOTUSETESTONLYToolStripMenuItem});
             this.iteraryToolStripMenuItem.Name = "iteraryToolStripMenuItem";
             this.iteraryToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.iteraryToolStripMenuItem.Text = "Iterary";
@@ -181,9 +183,10 @@
             this.flightToolStripMenuItem,
             this.trainToolStripMenuItem,
             this.busToolStripMenuItem,
-            this.otherToolStripMenuItem});
+            this.otherToolStripMenuItem,
+            this.testToolStripMenuItem});
             this.addTravelToolStripMenuItem.Name = "addTravelToolStripMenuItem";
-            this.addTravelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addTravelToolStripMenuItem.Size = new System.Drawing.Size(306, 22);
             this.addTravelToolStripMenuItem.Text = "Add Travel";
             // 
             // flightToolStripMenuItem
@@ -210,34 +213,41 @@
             this.otherToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
             this.otherToolStripMenuItem.Text = "Other";
             // 
+            // testToolStripMenuItem
+            // 
+            this.testToolStripMenuItem.Name = "testToolStripMenuItem";
+            this.testToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
+            this.testToolStripMenuItem.Text = "Test";
+            this.testToolStripMenuItem.Click += new System.EventHandler(this.testToolStripMenuItem_Click);
+            // 
             // addDestinationToolStripMenuItem
             // 
             this.addDestinationToolStripMenuItem.Name = "addDestinationToolStripMenuItem";
-            this.addDestinationToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addDestinationToolStripMenuItem.Size = new System.Drawing.Size(306, 22);
             this.addDestinationToolStripMenuItem.Text = "Add Destination";
             // 
             // removeTravelToolStripMenuItem
             // 
             this.removeTravelToolStripMenuItem.Name = "removeTravelToolStripMenuItem";
-            this.removeTravelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.removeTravelToolStripMenuItem.Size = new System.Drawing.Size(306, 22);
             this.removeTravelToolStripMenuItem.Text = "Remove Travel";
             // 
             // removeDestinationToolStripMenuItem
             // 
             this.removeDestinationToolStripMenuItem.Name = "removeDestinationToolStripMenuItem";
-            this.removeDestinationToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.removeDestinationToolStripMenuItem.Size = new System.Drawing.Size(306, 22);
             this.removeDestinationToolStripMenuItem.Text = "Remove Destination";
             // 
             // groupToolStripMenuItem
             // 
             this.groupToolStripMenuItem.Name = "groupToolStripMenuItem";
-            this.groupToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.groupToolStripMenuItem.Size = new System.Drawing.Size(306, 22);
             this.groupToolStripMenuItem.Text = "Group Travel";
             // 
             // groupDestinationToolStripMenuItem
             // 
             this.groupDestinationToolStripMenuItem.Name = "groupDestinationToolStripMenuItem";
-            this.groupDestinationToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.groupDestinationToolStripMenuItem.Size = new System.Drawing.Size(306, 22);
             this.groupDestinationToolStripMenuItem.Text = "Group Destination";
             // 
             // groupOptionsToolStripMenuItem
@@ -246,7 +256,7 @@
             this.removeGroupToolStripMenuItem,
             this.refreshGroupToolStripMenuItem});
             this.groupOptionsToolStripMenuItem.Name = "groupOptionsToolStripMenuItem";
-            this.groupOptionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.groupOptionsToolStripMenuItem.Size = new System.Drawing.Size(306, 22);
             this.groupOptionsToolStripMenuItem.Text = "Group Options";
             // 
             // removeGroupToolStripMenuItem
@@ -261,6 +271,13 @@
             this.refreshGroupToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.refreshGroupToolStripMenuItem.Text = "Refresh Group";
             // 
+            // theNuclearOptionDONOTUSETESTONLYToolStripMenuItem
+            // 
+            this.theNuclearOptionDONOTUSETESTONLYToolStripMenuItem.Name = "theNuclearOptionDONOTUSETESTONLYToolStripMenuItem";
+            this.theNuclearOptionDONOTUSETESTONLYToolStripMenuItem.Size = new System.Drawing.Size(306, 22);
+            this.theNuclearOptionDONOTUSETESTONLYToolStripMenuItem.Text = "The Nuclear Option DO NOT USE TEST ONLY";
+            this.theNuclearOptionDONOTUSETESTONLYToolStripMenuItem.Click += new System.EventHandler(this.theNuclearOptionDONOTUSETESTONLYToolStripMenuItem_Click);
+            // 
             // calendarToolStripMenuItem
             // 
             this.calendarToolStripMenuItem.Name = "calendarToolStripMenuItem";
@@ -270,8 +287,7 @@
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.figureItOutYourselfToolStripMenuItem,
-            this.exampleToolStripMenuItem});
+            this.figureItOutYourselfToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
@@ -281,12 +297,6 @@
             this.figureItOutYourselfToolStripMenuItem.Name = "figureItOutYourselfToolStripMenuItem";
             this.figureItOutYourselfToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.figureItOutYourselfToolStripMenuItem.Text = "Figure It out yourself";
-            // 
-            // exampleToolStripMenuItem
-            // 
-            this.exampleToolStripMenuItem.Name = "exampleToolStripMenuItem";
-            this.exampleToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-            this.exampleToolStripMenuItem.Text = "example";
             // 
             // mainformbox
             // 
@@ -309,35 +319,36 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ListView iterlist;
-        private System.Windows.Forms.MonthCalendar iterarycalendar;
-        private System.Windows.Forms.Label curiterary;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem iteraryToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem calendarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveIteraryToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem loadIteraryToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addTravelToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addDestinationToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem removeTravelToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem removeDestinationToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem groupToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem groupDestinationToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem groupOptionsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem removeGroupToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem refreshGroupToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem figureItOutYourselfToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem flightToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem trainToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem busToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem otherToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exampleToolStripMenuItem;
+        // Set any public items here from private => public ---JS 20230828
+        public System.Windows.Forms.GroupBox groupBox1;
+        public System.Windows.Forms.GroupBox groupBox2;
+        public System.Windows.Forms.ListView iterlist;
+        public System.Windows.Forms.MonthCalendar iterarycalendar;
+        public System.Windows.Forms.Label curiterary;
+        public System.Windows.Forms.MenuStrip menuStrip1;
+        public System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem iteraryToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem calendarToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem saveIteraryToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem loadIteraryToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem addTravelToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem addDestinationToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem removeTravelToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem removeDestinationToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem groupToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem groupDestinationToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem groupOptionsToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem removeGroupToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem refreshGroupToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem figureItOutYourselfToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem flightToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem trainToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem busToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem otherToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem theNuclearOptionDONOTUSETESTONLYToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
     }
 }
 
