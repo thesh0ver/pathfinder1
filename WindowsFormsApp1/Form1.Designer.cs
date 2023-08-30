@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem13 = new System.Windows.Forms.ListViewItem("april is the cruellest month");
-            System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem("breeding lilacs out of the dead land");
-            System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem("mixing memory and desire");
-            System.Windows.Forms.ListViewItem listViewItem16 = new System.Windows.Forms.ListViewItem("stirring dull roots with spring rain");
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("april is the cruellest month");
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("breeding lilacs out of the dead land");
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("mixing memory and desire");
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("stirring dull roots with spring rain");
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.curiterary = new System.Windows.Forms.Label();
             this.iterarycalendar = new System.Windows.Forms.MonthCalendar();
@@ -104,10 +104,10 @@
             // 
             this.iterlist.HideSelection = false;
             this.iterlist.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem13,
-            listViewItem14,
-            listViewItem15,
-            listViewItem16});
+            listViewItem1,
+            listViewItem2,
+            listViewItem3,
+            listViewItem4});
             this.iterlist.Location = new System.Drawing.Point(6, 203);
             this.iterlist.Name = "iterlist";
             this.iterlist.Size = new System.Drawing.Size(227, 501);
@@ -304,6 +304,7 @@
             // testlabel
             // 
             this.testlabel.AutoSize = true;
+            this.testlabel.BackColor = System.Drawing.SystemColors.Control;
             this.testlabel.Location = new System.Drawing.Point(805, 52);
             this.testlabel.Name = "testlabel";
             this.testlabel.Size = new System.Drawing.Size(46, 13);
