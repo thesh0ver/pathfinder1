@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("april is the cruellest month");
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("breeding lilacs out of the dead land");
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("mixing memory and desire");
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("stirring dull roots with spring rain");
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("april is the cruellest month");
+            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("breeding lilacs out of the dead land");
+            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem("mixing memory and desire");
+            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem("stirring dull roots with spring rain");
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.curiterary = new System.Windows.Forms.Label();
             this.iterarycalendar = new System.Windows.Forms.MonthCalendar();
@@ -64,6 +64,7 @@
             this.testlabel = new System.Windows.Forms.Label();
             this.testsubmit = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.shouldOpenConsoleButtonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -104,10 +105,10 @@
             // 
             this.iterlist.HideSelection = false;
             this.iterlist.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2,
-            listViewItem3,
-            listViewItem4});
+            listViewItem5,
+            listViewItem6,
+            listViewItem7,
+            listViewItem8});
             this.iterlist.Location = new System.Drawing.Point(6, 203);
             this.iterlist.Name = "iterlist";
             this.iterlist.Size = new System.Drawing.Size(227, 501);
@@ -140,6 +141,8 @@
             // 
             // settingsToolStripMenuItem
             // 
+            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.shouldOpenConsoleButtonToolStripMenuItem});
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
             this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.settingsToolStripMenuItem.Text = "Settings";
@@ -329,6 +332,13 @@
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 5;
             // 
+            // shouldOpenConsoleButtonToolStripMenuItem
+            // 
+            this.shouldOpenConsoleButtonToolStripMenuItem.Name = "shouldOpenConsoleButtonToolStripMenuItem";
+            this.shouldOpenConsoleButtonToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
+            this.shouldOpenConsoleButtonToolStripMenuItem.Text = "Should Open Console Button";
+            this.shouldOpenConsoleButtonToolStripMenuItem.Click += new System.EventHandler(this.shouldOpenConsoleButtonToolStripMenuItem_Click);
+            // 
             // mainformbox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -386,6 +396,7 @@
         public System.Windows.Forms.Label testlabel;
         public System.Windows.Forms.Button testsubmit;
         public System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ToolStripMenuItem shouldOpenConsoleButtonToolStripMenuItem;
     }
 }
 

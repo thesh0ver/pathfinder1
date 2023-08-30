@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Runtime.InteropServices;
 
 namespace pathfinder
 {
@@ -69,6 +70,22 @@ namespace pathfinder
         { // passes information from the textbox to save function under testing --- JS 20230828
             string itinerary = textBox1.Text;
             Program.saveitinerary(itinerary);
+        }
+
+        private void shouldOpenConsoleButtonToolStripMenuItem_Click(object sender, EventArgs e)
+        { /* functions function opens a console on button press
+           * !& Bug Notice: When the console is closed, the form also closes, 
+           * must be changed so console can be closed without losing the
+           * main applications concurrency, IE: so the console can be
+           * closed with out closing the main application or anything else
+           * https://stackoverflow.com/questions/4362111/how-do-i-show-a-console-output-window-in-a-forms-application
+           * ---JS 20230830
+           */
+
+            AllocConsole();
+            [DllImport("kernel32.dll", SetLastError = true)]
+            [return: MarshalAs(UnmanagedType.Bool)]
+            static extern bool AllocConsole();
         }
     }
 }
