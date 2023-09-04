@@ -28,10 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("april is the cruellest month");
-            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("breeding lilacs out of the dead land");
-            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem("mixing memory and desire");
-            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem("stirring dull roots with spring rain");
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.curiterary = new System.Windows.Forms.Label();
             this.iterarycalendar = new System.Windows.Forms.MonthCalendar();
@@ -39,6 +35,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.setSaveLocationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveIteraryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadIteraryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,7 +61,6 @@
             this.testlabel = new System.Windows.Forms.Label();
             this.testsubmit = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.shouldOpenConsoleButtonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -80,17 +76,15 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Iterary List";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // curiterary
             // 
             this.curiterary.AutoSize = true;
             this.curiterary.Location = new System.Drawing.Point(6, 187);
             this.curiterary.Name = "curiterary";
-            this.curiterary.Size = new System.Drawing.Size(73, 13);
+            this.curiterary.Size = new System.Drawing.Size(81, 13);
             this.curiterary.TabIndex = 2;
-            this.curiterary.Text = "Current Iterary";
-            this.curiterary.Click += new System.EventHandler(this.curiterary_Click);
+            this.curiterary.Text = "Current Itinerary";
             // 
             // iterarycalendar
             // 
@@ -104,11 +98,6 @@
             // iterlist
             // 
             this.iterlist.HideSelection = false;
-            this.iterlist.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem5,
-            listViewItem6,
-            listViewItem7,
-            listViewItem8});
             this.iterlist.Location = new System.Drawing.Point(6, 203);
             this.iterlist.Name = "iterlist";
             this.iterlist.Size = new System.Drawing.Size(227, 501);
@@ -123,7 +112,6 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Details";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // menuStrip1
             // 
@@ -142,10 +130,17 @@
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.shouldOpenConsoleButtonToolStripMenuItem});
+            this.setSaveLocationToolStripMenuItem});
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
             this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.settingsToolStripMenuItem.Text = "Settings";
+            // 
+            // setSaveLocationToolStripMenuItem
+            // 
+            this.setSaveLocationToolStripMenuItem.Name = "setSaveLocationToolStripMenuItem";
+            this.setSaveLocationToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.setSaveLocationToolStripMenuItem.Text = "Set Save Location";
+            this.setSaveLocationToolStripMenuItem.Click += new System.EventHandler(this.setSaveLocationToolStripMenuItem_Click);
             // 
             // optionsToolStripMenuItem
             // 
@@ -159,14 +154,14 @@
             // saveIteraryToolStripMenuItem
             // 
             this.saveIteraryToolStripMenuItem.Name = "saveIteraryToolStripMenuItem";
-            this.saveIteraryToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
-            this.saveIteraryToolStripMenuItem.Text = "Save Iterary";
+            this.saveIteraryToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.saveIteraryToolStripMenuItem.Text = "Save Itinerary";
             // 
             // loadIteraryToolStripMenuItem
             // 
             this.loadIteraryToolStripMenuItem.Name = "loadIteraryToolStripMenuItem";
-            this.loadIteraryToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
-            this.loadIteraryToolStripMenuItem.Text = "Load Iterary";
+            this.loadIteraryToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.loadIteraryToolStripMenuItem.Text = "Load Itinerary";
             // 
             // iteraryToolStripMenuItem
             // 
@@ -180,8 +175,8 @@
             this.groupOptionsToolStripMenuItem,
             this.theNuclearOptionDONOTUSETESTONLYToolStripMenuItem});
             this.iteraryToolStripMenuItem.Name = "iteraryToolStripMenuItem";
-            this.iteraryToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.iteraryToolStripMenuItem.Text = "Iterary";
+            this.iteraryToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.iteraryToolStripMenuItem.Text = "Itinerary";
             // 
             // addTravelToolStripMenuItem
             // 
@@ -224,7 +219,6 @@
             this.testToolStripMenuItem.Name = "testToolStripMenuItem";
             this.testToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
             this.testToolStripMenuItem.Text = "Test";
-            this.testToolStripMenuItem.Click += new System.EventHandler(this.testToolStripMenuItem_Click);
             // 
             // addDestinationToolStripMenuItem
             // 
@@ -313,7 +307,6 @@
             this.testlabel.Size = new System.Drawing.Size(46, 13);
             this.testlabel.TabIndex = 3;
             this.testlabel.Text = "testlabel";
-            this.testlabel.Click += new System.EventHandler(this.label1_Click);
             // 
             // testsubmit
             // 
@@ -331,13 +324,6 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 5;
-            // 
-            // shouldOpenConsoleButtonToolStripMenuItem
-            // 
-            this.shouldOpenConsoleButtonToolStripMenuItem.Name = "shouldOpenConsoleButtonToolStripMenuItem";
-            this.shouldOpenConsoleButtonToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
-            this.shouldOpenConsoleButtonToolStripMenuItem.Text = "Should Open Console Button";
-            this.shouldOpenConsoleButtonToolStripMenuItem.Click += new System.EventHandler(this.shouldOpenConsoleButtonToolStripMenuItem_Click);
             // 
             // mainformbox
             // 
@@ -396,7 +382,7 @@
         public System.Windows.Forms.Label testlabel;
         public System.Windows.Forms.Button testsubmit;
         public System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ToolStripMenuItem shouldOpenConsoleButtonToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem setSaveLocationToolStripMenuItem;
     }
 }
 
