@@ -16,8 +16,8 @@ namespace pathfinder
     
     public partial class mainformbox : Form
     {
-        public string savelocationstring = "";
-        System.Windows.Forms.TextBox savelocationtextbox = new System.Windows.Forms.TextBox();
+        public static string savelocationstring = "";
+        public System.Windows.Forms.TextBox savelocationtextbox = new System.Windows.Forms.TextBox();
         
         public mainformbox()
         {
