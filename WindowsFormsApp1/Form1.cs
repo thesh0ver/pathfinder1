@@ -25,11 +25,11 @@ namespace pathfinder
         }
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
-            Form itineraryitemdialog = new Form();
+            //Form itineraryitemdialog = new Form();
         }
         private void theNuclearOptionDONOTUSETESTONLYToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            iterlist.Items.Clear();
+            itinerlist.Items.Clear();
         }
         public void testsubmit_Click(object sender, EventArgs e)
         { // passes information from the textbox to save function under testing --- JS 20230828
@@ -44,6 +44,7 @@ namespace pathfinder
         {
             
             Form savelocationdialog = new Form();
+            savelocationdialog.Text = "Set Save Location";
             // create label for dialog
             Label locationsetlabel = new Label();
             locationsetlabel.Name = "Savelocationlabel";
@@ -80,5 +81,12 @@ namespace pathfinder
             submitsavelocation.BringToFront();
             savelocationdialog.ShowDialog();
         }
+
+        private void testAddItineraryItemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            itinerlist.Items.Add("Here is Belladonna, the Lady of the Rocks,", 0);
+        }
+
+ 
     }
 }

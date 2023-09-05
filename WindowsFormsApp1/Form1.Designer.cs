@@ -26,12 +26,12 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+        public void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.curiterary = new System.Windows.Forms.Label();
             this.iterarycalendar = new System.Windows.Forms.MonthCalendar();
-            this.iterlist = new System.Windows.Forms.ListView();
+            this.itinerlist = new System.Windows.Forms.ListView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,6 +55,7 @@
             this.removeGroupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.refreshGroupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.theNuclearOptionDONOTUSETESTONLYToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.testAddItineraryItemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.calendarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.figureItOutYourselfToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,7 +70,7 @@
             // 
             this.groupBox1.Controls.Add(this.curiterary);
             this.groupBox1.Controls.Add(this.iterarycalendar);
-            this.groupBox1.Controls.Add(this.iterlist);
+            this.groupBox1.Controls.Add(this.itinerlist);
             this.groupBox1.Location = new System.Drawing.Point(12, 27);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(243, 710);
@@ -95,14 +96,15 @@
             this.iterarycalendar.TabIndex = 1;
             this.iterarycalendar.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
             // 
-            // iterlist
+            // itinerlist
             // 
-            this.iterlist.HideSelection = false;
-            this.iterlist.Location = new System.Drawing.Point(6, 203);
-            this.iterlist.Name = "iterlist";
-            this.iterlist.Size = new System.Drawing.Size(227, 501);
-            this.iterlist.TabIndex = 0;
-            this.iterlist.UseCompatibleStateImageBehavior = false;
+            this.itinerlist.AllowColumnReorder = true;
+            this.itinerlist.HideSelection = false;
+            this.itinerlist.Location = new System.Drawing.Point(6, 203);
+            this.itinerlist.Name = "itinerlist";
+            this.itinerlist.Size = new System.Drawing.Size(227, 501);
+            this.itinerlist.TabIndex = 0;
+            this.itinerlist.UseCompatibleStateImageBehavior = false;
             // 
             // groupBox2
             // 
@@ -173,7 +175,8 @@
             this.groupToolStripMenuItem,
             this.groupDestinationToolStripMenuItem,
             this.groupOptionsToolStripMenuItem,
-            this.theNuclearOptionDONOTUSETESTONLYToolStripMenuItem});
+            this.theNuclearOptionDONOTUSETESTONLYToolStripMenuItem,
+            this.testAddItineraryItemToolStripMenuItem});
             this.iteraryToolStripMenuItem.Name = "iteraryToolStripMenuItem";
             this.iteraryToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.iteraryToolStripMenuItem.Text = "Itinerary";
@@ -278,6 +281,13 @@
             this.theNuclearOptionDONOTUSETESTONLYToolStripMenuItem.Text = "The Nuclear Option DO NOT USE TEST ONLY";
             this.theNuclearOptionDONOTUSETESTONLYToolStripMenuItem.Click += new System.EventHandler(this.theNuclearOptionDONOTUSETESTONLYToolStripMenuItem_Click);
             // 
+            // testAddItineraryItemToolStripMenuItem
+            // 
+            this.testAddItineraryItemToolStripMenuItem.Name = "testAddItineraryItemToolStripMenuItem";
+            this.testAddItineraryItemToolStripMenuItem.Size = new System.Drawing.Size(306, 22);
+            this.testAddItineraryItemToolStripMenuItem.Text = "Test - Add Itinerary Item";
+            this.testAddItineraryItemToolStripMenuItem.Click += new System.EventHandler(this.testAddItineraryItemToolStripMenuItem_Click);
+            // 
             // calendarToolStripMenuItem
             // 
             this.calendarToolStripMenuItem.Name = "calendarToolStripMenuItem";
@@ -352,7 +362,7 @@
         // Set any public items here from private => public ---JS 20230828
         public System.Windows.Forms.GroupBox groupBox1;
         public System.Windows.Forms.GroupBox groupBox2;
-        public System.Windows.Forms.ListView iterlist;
+        public System.Windows.Forms.ListView itinerlist;
         public System.Windows.Forms.MonthCalendar iterarycalendar;
         public System.Windows.Forms.Label curiterary;
         public System.Windows.Forms.MenuStrip menuStrip1;
@@ -383,6 +393,7 @@
         public System.Windows.Forms.Button testsubmit;
         public System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ToolStripMenuItem setSaveLocationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem testAddItineraryItemToolStripMenuItem;
     }
 }
 
