@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Runtime.InteropServices;
 using TextBox = System.Windows.Forms.TextBox;
-//using System.Reflection.Emit;
+///using System.Reflection.Emit;
 
 namespace pathfinder
 {
@@ -18,11 +18,7 @@ namespace pathfinder
     public partial class mainformbox : Form
     {
         public static string savelocationstring = "";
-<<<<<<< HEAD
-        public static string DATASTRING = "";
-=======
         public static string datastring = "";
->>>>>>> 564517ce94d797aeada06523f9a53234519bce97
         public System.Windows.Forms.TextBox savelocationtextbox = new System.Windows.Forms.TextBox();
         System.Windows.Forms.TextBox textboxforItinitem = new System.Windows.Forms.TextBox();
 
@@ -137,11 +133,8 @@ namespace pathfinder
         public void onclick_submit_datastring(object sender, EventArgs e)
         {
             itinerlist.Items.Add(datastring, 0);
+            Program.saveitinerary(datastring);
         }
-
-<<<<<<< HEAD
-
-=======
         private void addDestinationToolStripMenuItem_Click(object sender, EventArgs e)
         { // itinerlist.Items.Add("",0);
             Form addDestDialog = new Form();
@@ -176,15 +169,17 @@ namespace pathfinder
             datastring = desttextnametextbox.Text;
             submitsavelocation.Click += onclick_submit_datastring; //like........... legally? ---JS 20230910
 
-            desttextnametextbox.BringToFront();
-            destinationnamelabel.BringToFront();
-            submitsavelocation.BringToFront();
+            
             //do not alter the order of these control adds, make break function  ---JS 20230910
             addDestDialog.Controls.Add(desttextnametextbox);
             addDestDialog.Controls.Add(destinationnamelabel);
             addDestDialog.Controls.Add(submitsavelocation);
+
+            desttextnametextbox.BringToFront();
+            destinationnamelabel.BringToFront();
+            submitsavelocation.BringToFront();
+
             addDestDialog.ShowDialog();
         }
->>>>>>> 564517ce94d797aeada06523f9a53234519bce97
     }
 }
