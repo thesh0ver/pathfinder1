@@ -110,7 +110,7 @@
             // 
             this.groupBox2.Location = new System.Drawing.Point(261, 27);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(516, 710);
+            this.groupBox2.Size = new System.Drawing.Size(772, 710);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Details";
@@ -340,12 +340,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1045, 749);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.testsubmit);
-            this.Controls.Add(this.testlabel);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.testlabel);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.testsubmit);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "mainformbox";
             this.Text = "Talisha\'s Tentative Travel Planning System";
@@ -392,8 +392,8 @@
         public System.Windows.Forms.Label testlabel;
         public System.Windows.Forms.Button testsubmit;
         public System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ToolStripMenuItem setSaveLocationToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem testAddItineraryItemToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem setSaveLocationToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem testAddItineraryItemToolStripMenuItem;
     }
 }
 

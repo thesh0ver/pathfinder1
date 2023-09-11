@@ -17,8 +17,10 @@ namespace pathfinder
     public partial class mainformbox : Form
     {
         public static string savelocationstring = "";
+        public static string DATASTRING = "";
         public System.Windows.Forms.TextBox savelocationtextbox = new System.Windows.Forms.TextBox();
-        
+        System.Windows.Forms.TextBox textboxforItinitem = new System.Windows.Forms.TextBox();
+
         public mainformbox()
         {
             InitializeComponent();
@@ -36,6 +38,10 @@ namespace pathfinder
             string itinerary = textBox1.Text;
             Program.saveitinerary(itinerary);
         }                
+        public void onclickaddItinITEM(object sender, EventArgs e)
+        {
+            itinerlist.Items.Add(textboxforItinitem.Text, 0);
+        }
         public void onclick(object sender, EventArgs e)
         {
             savelocationstring = savelocationtextbox.Text;
@@ -82,11 +88,48 @@ namespace pathfinder
             savelocationdialog.ShowDialog();
         }
 
-        private void testAddItineraryItemToolStripMenuItem_Click(object sender, EventArgs e)
+        public void testAddItineraryItemToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            itinerlist.Items.Add("Here is Belladonna, the Lady of the Rocks,", 0);
+            //itinerlist.Items.Add("Here is Belladonna, the Lady of the Rocks,", 0);
+            Form itineraryAddDialog = new Form();
+            itineraryAddDialog.Text = "Add Itinerary item";
+            //label for IAD
+            Label inputlabel = new Label();
+            inputlabel.Name = "inputlabel0";
+            inputlabel.Dock = System.Windows.Forms.DockStyle.Top;
+            inputlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            inputlabel.Location = new System.Drawing.Point(1, 1);
+            inputlabel.TabIndex = 3;
+            inputlabel.TextAlign = ContentAlignment.TopCenter;
+            inputlabel.Size = new System.Drawing.Size(20, 60);
+            inputlabel.Text = "pearance of Cargo 200 is unknown, except that it came into use in the mid-1980s duri";
+            //textbox thingy
+            System.Windows.Forms.TextBox textboxforItinitem = new System.Windows.Forms.TextBox();
+            textboxforItinitem.AcceptsReturn = true;
+            textboxforItinitem.AcceptsTab = true;
+            textboxforItinitem.Multiline = true;
+            textboxforItinitem.Location = new System.Drawing.Point(35, 35);
+            textboxforItinitem.Size = new Size(200, 100);
+            textboxforItinitem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // submit button
+            System.Windows.Forms.Button submititinitembutton = new System.Windows.Forms.Button();
+            submititinitembutton.Location = new System.Drawing.Point(10, 10);
+            submititinitembutton.Size = new Size(20, 40);
+            submititinitembutton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            submititinitembutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            submititinitembutton.Text = "Submit";
+            submititinitembutton.Click += new System.EventHandler(this.onclickaddItinITEM);
+
+            itineraryAddDialog.Controls.Add(inputlabel);
+            itineraryAddDialog.Controls.Add(textboxforItinitem);
+            itineraryAddDialog.Controls.Add(submititinitembutton);
+            inputlabel.BringToFront();
+            textboxforItinitem.BringToFront();
+            submititinitembutton.BringToFront();
+            itineraryAddDialog.ShowDialog();
+
         }
 
- 
+
     }
 }
