@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 using System;
+=======
+﻿using System;
+>>>>>>> 564517ce94d797aeada06523f9a53234519bce97
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -23,4 +27,8 @@ namespace pathfinder
         }
 
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 564517ce94d797aeada06523f9a53234519bce97

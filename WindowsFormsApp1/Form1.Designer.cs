@@ -196,31 +196,31 @@
             // flightToolStripMenuItem
             // 
             this.flightToolStripMenuItem.Name = "flightToolStripMenuItem";
-            this.flightToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
+            this.flightToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.flightToolStripMenuItem.Text = "Flight";
             // 
             // trainToolStripMenuItem
             // 
             this.trainToolStripMenuItem.Name = "trainToolStripMenuItem";
-            this.trainToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
+            this.trainToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.trainToolStripMenuItem.Text = "Train";
             // 
             // busToolStripMenuItem
             // 
             this.busToolStripMenuItem.Name = "busToolStripMenuItem";
-            this.busToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
+            this.busToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.busToolStripMenuItem.Text = "Bus";
             // 
             // otherToolStripMenuItem
             // 
             this.otherToolStripMenuItem.Name = "otherToolStripMenuItem";
-            this.otherToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
+            this.otherToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.otherToolStripMenuItem.Text = "Other";
             // 
             // testToolStripMenuItem
             // 
             this.testToolStripMenuItem.Name = "testToolStripMenuItem";
-            this.testToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
+            this.testToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.testToolStripMenuItem.Text = "Test";
             // 
             // addDestinationToolStripMenuItem
@@ -228,6 +228,7 @@
             this.addDestinationToolStripMenuItem.Name = "addDestinationToolStripMenuItem";
             this.addDestinationToolStripMenuItem.Size = new System.Drawing.Size(306, 22);
             this.addDestinationToolStripMenuItem.Text = "Add Destination";
+//            this.addDestinationToolStripMenuItem.Click += new System.EventHandler(this.addDestinationToolStripMenuItem_Click);
             // 
             // removeTravelToolStripMenuItem
             // 

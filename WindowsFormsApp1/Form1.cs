@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Runtime.InteropServices;
+using TextBox = System.Windows.Forms.TextBox;
 //using System.Reflection.Emit;
 
 namespace pathfinder
@@ -17,7 +18,11 @@ namespace pathfinder
     public partial class mainformbox : Form
     {
         public static string savelocationstring = "";
+<<<<<<< HEAD
         public static string DATASTRING = "";
+=======
+        public static string datastring = "";
+>>>>>>> 564517ce94d797aeada06523f9a53234519bce97
         public System.Windows.Forms.TextBox savelocationtextbox = new System.Windows.Forms.TextBox();
         System.Windows.Forms.TextBox textboxforItinitem = new System.Windows.Forms.TextBox();
 
@@ -129,7 +134,57 @@ namespace pathfinder
             itineraryAddDialog.ShowDialog();
 
         }
+        public void onclick_submit_datastring(object sender, EventArgs e)
+        {
+            itinerlist.Items.Add(datastring, 0);
+        }
 
+<<<<<<< HEAD
 
+=======
+        private void addDestinationToolStripMenuItem_Click(object sender, EventArgs e)
+        { // itinerlist.Items.Add("",0);
+            Form addDestDialog = new Form();
+            addDestDialog.Text = "Add Destination to your trip";
+            //desitination name label
+            Label destinationnamelabel = new Label();
+            destinationnamelabel.Name = "Savelocationlabel";
+            destinationnamelabel.Dock = System.Windows.Forms.DockStyle.Top;
+            destinationnamelabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            destinationnamelabel.Location = new System.Drawing.Point(1, 10);
+            destinationnamelabel.TabIndex = 3;
+            destinationnamelabel.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            destinationnamelabel.Text = "Enter the name of your destination: ";
+            destinationnamelabel.Size = new Size(20, 40);
+            // textbox to input basic destination data
+            TextBox desttextnametextbox = new TextBox();
+            desttextnametextbox.Name = "Savelocationlabel";
+            desttextnametextbox.Dock = System.Windows.Forms.DockStyle.Top;
+            desttextnametextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            desttextnametextbox.Location = new System.Drawing.Point(10, 10);
+            desttextnametextbox.TabIndex = 3;
+            desttextnametextbox.TextAlign = (HorizontalAlignment)ContentAlignment.TopLeft;//BADBADBADBABDBDBAD ---JS 20230910
+            desttextnametextbox.Text = "";
+            desttextnametextbox.Size = new Size(20, 40);
+            //submit button
+            System.Windows.Forms.Button submitsavelocation = new System.Windows.Forms.Button();
+            submitsavelocation.Location = new System.Drawing.Point(10, 10);
+            submitsavelocation.Size = new Size(20, 40);
+            submitsavelocation.Dock = System.Windows.Forms.DockStyle.Bottom;
+            submitsavelocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            submitsavelocation.Text = "Submit";
+            datastring = desttextnametextbox.Text;
+            submitsavelocation.Click += onclick_submit_datastring; //like........... legally? ---JS 20230910
+
+            desttextnametextbox.BringToFront();
+            destinationnamelabel.BringToFront();
+            submitsavelocation.BringToFront();
+            //do not alter the order of these control adds, make break function  ---JS 20230910
+            addDestDialog.Controls.Add(desttextnametextbox);
+            addDestDialog.Controls.Add(destinationnamelabel);
+            addDestDialog.Controls.Add(submitsavelocation);
+            addDestDialog.ShowDialog();
+        }
+>>>>>>> 564517ce94d797aeada06523f9a53234519bce97
     }
 }
