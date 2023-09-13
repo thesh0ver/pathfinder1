@@ -14,14 +14,12 @@ using TextBox = System.Windows.Forms.TextBox;
 
 namespace pathfinder
 {
-    
     public partial class mainformbox : Form
     {
         public static string savelocationstring = "";
         public static string datastring = "";
         public System.Windows.Forms.TextBox savelocationtextbox = new System.Windows.Forms.TextBox();
         System.Windows.Forms.TextBox textboxforItinitem = new System.Windows.Forms.TextBox();
-
         public mainformbox()
         {
             InitializeComponent();
