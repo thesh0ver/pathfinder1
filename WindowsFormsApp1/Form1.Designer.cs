@@ -28,14 +28,28 @@
         /// </summary>
         public void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainformbox));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.curiterary = new System.Windows.Forms.Label();
             this.iterarycalendar = new System.Windows.Forms.MonthCalendar();
             this.itinerlist = new System.Windows.Forms.ListView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.destpanel = new System.Windows.Forms.Panel();
+            this.typeofdestcombobox = new System.Windows.Forms.ComboBox();
+            this.destimage = new System.Windows.Forms.PictureBox();
+            this.coordlocationofdestlabeltarget = new System.Windows.Forms.Label();
+            this.coordlocationofdestlabel = new System.Windows.Forms.Label();
+            this.weblinklabel = new System.Windows.Forms.Label();
+            this.weblinklabeltarget = new System.Windows.Forms.LinkLabel();
+            this.Destlabelpanel = new System.Windows.Forms.Label();
+            this.typeofdestinationlabel = new System.Windows.Forms.Label();
+            this.nameofdestlabel = new System.Windows.Forms.Label();
+            this.nameofdestlabeltarget = new System.Windows.Forms.Label();
+            this.defpicture = new System.Windows.Forms.PictureBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.setSaveLocationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadDefaultScreenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveIteraryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadIteraryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,6 +61,7 @@
             this.otherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addDestinationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.removeTravelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeDestinationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,7 +70,6 @@
             this.removeGroupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.refreshGroupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.theNuclearOptionDONOTUSETESTONLYToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.testAddItineraryItemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.calendarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.figureItOutYourselfToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,6 +77,10 @@
             this.testsubmit = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.destpanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.destimage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.defpicture)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -108,12 +126,130 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.destpanel);
+            this.groupBox2.Controls.Add(this.defpicture);
             this.groupBox2.Location = new System.Drawing.Point(261, 27);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(772, 710);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Details";
+            // 
+            // destpanel
+            // 
+            this.destpanel.Controls.Add(this.typeofdestcombobox);
+            this.destpanel.Controls.Add(this.destimage);
+            this.destpanel.Controls.Add(this.coordlocationofdestlabeltarget);
+            this.destpanel.Controls.Add(this.coordlocationofdestlabel);
+            this.destpanel.Controls.Add(this.weblinklabel);
+            this.destpanel.Controls.Add(this.weblinklabeltarget);
+            this.destpanel.Controls.Add(this.Destlabelpanel);
+            this.destpanel.Controls.Add(this.typeofdestinationlabel);
+            this.destpanel.Controls.Add(this.nameofdestlabel);
+            this.destpanel.Controls.Add(this.nameofdestlabeltarget);
+            this.destpanel.Location = new System.Drawing.Point(6, 25);
+            this.destpanel.Name = "destpanel";
+            this.destpanel.Size = new System.Drawing.Size(766, 679);
+            this.destpanel.TabIndex = 6;
+            // 
+            // typeofdestcombobox
+            // 
+            this.typeofdestcombobox.FormattingEnabled = true;
+            this.typeofdestcombobox.Location = new System.Drawing.Point(137, 62);
+            this.typeofdestcombobox.Name = "typeofdestcombobox";
+            this.typeofdestcombobox.Size = new System.Drawing.Size(121, 21);
+            this.typeofdestcombobox.TabIndex = 7;
+            // 
+            // destimage
+            // 
+            this.destimage.Image = ((System.Drawing.Image)(resources.GetObject("destimage.Image")));
+            this.destimage.Location = new System.Drawing.Point(22, 178);
+            this.destimage.Name = "destimage";
+            this.destimage.Size = new System.Drawing.Size(436, 313);
+            this.destimage.TabIndex = 8;
+            this.destimage.TabStop = false;
+            // 
+            // coordlocationofdestlabeltarget
+            // 
+            this.coordlocationofdestlabeltarget.AutoSize = true;
+            this.coordlocationofdestlabeltarget.Location = new System.Drawing.Point(134, 128);
+            this.coordlocationofdestlabeltarget.Name = "coordlocationofdestlabeltarget";
+            this.coordlocationofdestlabeltarget.Size = new System.Drawing.Size(172, 13);
+            this.coordlocationofdestlabeltarget.TabIndex = 7;
+            this.coordlocationofdestlabeltarget.Text = "Dragging its slimy belly on the bank";
+            // 
+            // coordlocationofdestlabel
+            // 
+            this.coordlocationofdestlabel.AutoSize = true;
+            this.coordlocationofdestlabel.Location = new System.Drawing.Point(19, 128);
+            this.coordlocationofdestlabel.Name = "coordlocationofdestlabel";
+            this.coordlocationofdestlabel.Size = new System.Drawing.Size(84, 13);
+            this.coordlocationofdestlabel.TabIndex = 6;
+            this.coordlocationofdestlabel.Text = "Exact Location: ";
+            // 
+            // weblinklabel
+            // 
+            this.weblinklabel.AutoSize = true;
+            this.weblinklabel.Location = new System.Drawing.Point(19, 94);
+            this.weblinklabel.Name = "weblinklabel";
+            this.weblinklabel.Size = new System.Drawing.Size(76, 13);
+            this.weblinklabel.TabIndex = 2;
+            this.weblinklabel.Text = "Relevant Link:";
+            // 
+            // weblinklabeltarget
+            // 
+            this.weblinklabeltarget.AutoSize = true;
+            this.weblinklabeltarget.Location = new System.Drawing.Point(134, 94);
+            this.weblinklabeltarget.Name = "weblinklabeltarget";
+            this.weblinklabeltarget.Size = new System.Drawing.Size(303, 13);
+            this.weblinklabeltarget.TabIndex = 5;
+            this.weblinklabeltarget.TabStop = true;
+            this.weblinklabeltarget.Text = "SHADOWMONEYWIZARDGANGWELOVECASTINGSPELLS";
+            // 
+            // Destlabelpanel
+            // 
+            this.Destlabelpanel.AutoSize = true;
+            this.Destlabelpanel.Location = new System.Drawing.Point(-3, 0);
+            this.Destlabelpanel.Name = "Destlabelpanel";
+            this.Destlabelpanel.Size = new System.Drawing.Size(60, 13);
+            this.Destlabelpanel.TabIndex = 0;
+            this.Destlabelpanel.Text = "Destination";
+            // 
+            // typeofdestinationlabel
+            // 
+            this.typeofdestinationlabel.AutoSize = true;
+            this.typeofdestinationlabel.Location = new System.Drawing.Point(19, 65);
+            this.typeofdestinationlabel.Name = "typeofdestinationlabel";
+            this.typeofdestinationlabel.Size = new System.Drawing.Size(105, 13);
+            this.typeofdestinationlabel.TabIndex = 4;
+            this.typeofdestinationlabel.Text = "Type of Destination: ";
+            // 
+            // nameofdestlabel
+            // 
+            this.nameofdestlabel.AutoSize = true;
+            this.nameofdestlabel.Location = new System.Drawing.Point(19, 38);
+            this.nameofdestlabel.Name = "nameofdestlabel";
+            this.nameofdestlabel.Size = new System.Drawing.Size(109, 13);
+            this.nameofdestlabel.TabIndex = 1;
+            this.nameofdestlabel.Text = "Name of Destination: ";
+            // 
+            // nameofdestlabeltarget
+            // 
+            this.nameofdestlabeltarget.AutoSize = true;
+            this.nameofdestlabeltarget.Location = new System.Drawing.Point(134, 38);
+            this.nameofdestlabeltarget.Name = "nameofdestlabeltarget";
+            this.nameofdestlabeltarget.Size = new System.Drawing.Size(193, 13);
+            this.nameofdestlabeltarget.TabIndex = 2;
+            this.nameofdestlabeltarget.Text = "A rat crept softly through the vegetation";
+            // 
+            // defpicture
+            // 
+            this.defpicture.Image = ((System.Drawing.Image)(resources.GetObject("defpicture.Image")));
+            this.defpicture.Location = new System.Drawing.Point(6, 25);
+            this.defpicture.Name = "defpicture";
+            this.defpicture.Size = new System.Drawing.Size(778, 679);
+            this.defpicture.TabIndex = 7;
+            this.defpicture.TabStop = false;
             // 
             // menuStrip1
             // 
@@ -132,7 +268,8 @@
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.setSaveLocationToolStripMenuItem});
+            this.setSaveLocationToolStripMenuItem,
+            this.loadDefaultScreenToolStripMenuItem});
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
             this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.settingsToolStripMenuItem.Text = "Settings";
@@ -140,9 +277,16 @@
             // setSaveLocationToolStripMenuItem
             // 
             this.setSaveLocationToolStripMenuItem.Name = "setSaveLocationToolStripMenuItem";
-            this.setSaveLocationToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.setSaveLocationToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.setSaveLocationToolStripMenuItem.Text = "Set Save Location";
             this.setSaveLocationToolStripMenuItem.Click += new System.EventHandler(this.setSaveLocationToolStripMenuItem_Click);
+            // 
+            // loadDefaultScreenToolStripMenuItem
+            // 
+            this.loadDefaultScreenToolStripMenuItem.Name = "loadDefaultScreenToolStripMenuItem";
+            this.loadDefaultScreenToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.loadDefaultScreenToolStripMenuItem.Text = "Load Default Screen";
+            this.loadDefaultScreenToolStripMenuItem.Click += new System.EventHandler(this.loadDefaultScreenToolStripMenuItem_Click);
             // 
             // optionsToolStripMenuItem
             // 
@@ -170,13 +314,13 @@
             this.iteraryToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addTravelToolStripMenuItem,
             this.addDestinationToolStripMenuItem,
+            this.toolStripMenuItem1,
             this.removeTravelToolStripMenuItem,
             this.removeDestinationToolStripMenuItem,
             this.groupToolStripMenuItem,
             this.groupDestinationToolStripMenuItem,
             this.groupOptionsToolStripMenuItem,
-            this.theNuclearOptionDONOTUSETESTONLYToolStripMenuItem,
-            this.testAddItineraryItemToolStripMenuItem});
+            this.theNuclearOptionDONOTUSETESTONLYToolStripMenuItem});
             this.iteraryToolStripMenuItem.Name = "iteraryToolStripMenuItem";
             this.iteraryToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.iteraryToolStripMenuItem.Text = "Itinerary";
@@ -227,8 +371,14 @@
             // 
             this.addDestinationToolStripMenuItem.Name = "addDestinationToolStripMenuItem";
             this.addDestinationToolStripMenuItem.Size = new System.Drawing.Size(306, 22);
-            this.addDestinationToolStripMenuItem.Text = "Add Destination";
-//            this.addDestinationToolStripMenuItem.Click += new System.EventHandler(this.addDestinationToolStripMenuItem_Click);
+            this.addDestinationToolStripMenuItem.Text = "Add Overnight Destination";
+            this.addDestinationToolStripMenuItem.Click += new System.EventHandler(this.addDestinationToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(306, 22);
+            this.toolStripMenuItem1.Text = "Add Destination";
             // 
             // removeTravelToolStripMenuItem
             // 
@@ -281,13 +431,6 @@
             this.theNuclearOptionDONOTUSETESTONLYToolStripMenuItem.Size = new System.Drawing.Size(306, 22);
             this.theNuclearOptionDONOTUSETESTONLYToolStripMenuItem.Text = "The Nuclear Option DO NOT USE TEST ONLY";
             this.theNuclearOptionDONOTUSETESTONLYToolStripMenuItem.Click += new System.EventHandler(this.theNuclearOptionDONOTUSETESTONLYToolStripMenuItem_Click);
-            // 
-            // testAddItineraryItemToolStripMenuItem
-            // 
-            this.testAddItineraryItemToolStripMenuItem.Name = "testAddItineraryItemToolStripMenuItem";
-            this.testAddItineraryItemToolStripMenuItem.Size = new System.Drawing.Size(306, 22);
-            this.testAddItineraryItemToolStripMenuItem.Text = "Test - Add Itinerary Item";
-            this.testAddItineraryItemToolStripMenuItem.Click += new System.EventHandler(this.testAddItineraryItemToolStripMenuItem_Click);
             // 
             // calendarToolStripMenuItem
             // 
@@ -352,6 +495,11 @@
             this.Text = "Talisha\'s Tentative Travel Planning System";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.destpanel.ResumeLayout(false);
+            this.destpanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.destimage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.defpicture)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -394,7 +542,20 @@
         public System.Windows.Forms.Button testsubmit;
         public System.Windows.Forms.TextBox textBox1;
         public System.Windows.Forms.ToolStripMenuItem setSaveLocationToolStripMenuItem;
-        public System.Windows.Forms.ToolStripMenuItem testAddItineraryItemToolStripMenuItem;
+        private System.Windows.Forms.Panel destpanel;
+        private System.Windows.Forms.Label Destlabelpanel;
+        private System.Windows.Forms.Label nameofdestlabel;
+        private System.Windows.Forms.LinkLabel weblinklabeltarget;
+        private System.Windows.Forms.Label typeofdestinationlabel;
+        private System.Windows.Forms.Label nameofdestlabeltarget;
+        private System.Windows.Forms.Label weblinklabel;
+        private System.Windows.Forms.Label coordlocationofdestlabeltarget;
+        private System.Windows.Forms.Label coordlocationofdestlabel;
+        private System.Windows.Forms.PictureBox destimage;
+        private System.Windows.Forms.ComboBox typeofdestcombobox;
+        private System.Windows.Forms.PictureBox defpicture;
+        private System.Windows.Forms.ToolStripMenuItem loadDefaultScreenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
     }
 }
 

@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static pathfinder.stupidfuckingbullshitevents;
 
 namespace pathfinder
 {
@@ -67,6 +68,26 @@ namespace pathfinder
 
             return dataloaded;
         }
+    }
+    public partial class stupidfuckingbullshitevents
+    {
+       /* public event stupidfuckingbullshitevents SFBSE
+        {
+            add
+            {
+                //mainformbox.onclick_submit_datastring(mainformbox.datastring);
+            }
+            remove
+            {
+            }
+        } //(object sender, stupidfuckingbullshitevents e)
+        public delegate void sfbse.SFBSE(object sender, stupidfuckingbullshitevents e);
+        public event EventHandler datapasstime;
+        public string textboxdata { get; set; }
+        public virtual void ondatapasstime(EventArgs e)
+        {
+            datapasstime?.Invoke(this, e);
+        }*/
     }
     
 }

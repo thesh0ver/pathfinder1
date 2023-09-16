@@ -23,6 +23,12 @@ namespace pathfinder
         public mainformbox()
         {
             InitializeComponent();
+            defpicture.BringToFront();
+            destpanel.SendToBack();
+        }
+        public void loadDefaultScreenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            defpicture.BringToFront();
         }
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
@@ -36,7 +42,7 @@ namespace pathfinder
         { // passes information from the textbox to save function under testing --- JS 20230828
             string itinerary = textBox1.Text;
             Program.saveitinerary(itinerary);
-        }                
+        }
         public void onclickaddItinITEM(object sender, EventArgs e)
         {
             itinerlist.Items.Add(textboxforItinitem.Text, 0);
@@ -47,7 +53,7 @@ namespace pathfinder
         }
         public void setSaveLocationToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
             Form savelocationdialog = new Form();
             savelocationdialog.Text = "Set Save Location";
             // create label for dialog
@@ -59,7 +65,7 @@ namespace pathfinder
             locationsetlabel.TabIndex = 3;
             locationsetlabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             locationsetlabel.Text = "Save location for data: ";
-            locationsetlabel.Size = new Size(20,40);
+            locationsetlabel.Size = new Size(20, 40);
             // create textbox
             // moved savelocationtextbox generator outside function to validate onclick funtcion
             savelocationtextbox.AcceptsReturn = true;
@@ -87,7 +93,7 @@ namespace pathfinder
             savelocationdialog.ShowDialog();
         }
 
-        public void testAddItineraryItemToolStripMenuItem_Click(object sender, EventArgs e)
+        /*public void testAddItineraryItemToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //itinerlist.Items.Add("Here is Belladonna, the Lady of the Rocks,", 0);
             Form itineraryAddDialog = new Form();
@@ -127,36 +133,128 @@ namespace pathfinder
             submititinitembutton.BringToFront();
             itineraryAddDialog.ShowDialog();
 
+        }*/
+        public void onclick_submit_datastring(string destnamestring, string combostring, string weblinkstring, string coordstring)
+        { // for value jfsgnkjdfsnkjj, sets itinerlist's to have that value added to the list ---JS 20230918
+            itinerlist.Items.Add(destnamestring, 0);
+            nameofdestlabeltarget.Text = destnamestring;
+            typeofdestcombobox.SelectedItem = combostring;
+            //Select(combostring); //= combostring;// typeofdestcombobox
+            weblinklabeltarget.Text = weblinkstring;
+            coordlocationofdestlabeltarget.Text = coordstring;
+            Program.saveitinerary(destnamestring);
         }
-        public void onclick_submit_datastring(object sender, EventArgs e)
+        public void onclick_submit_destination()
         {
-            itinerlist.Items.Add(datastring, 0);
-            Program.saveitinerary(datastring);
+            //jnfdjn
         }
         private void addDestinationToolStripMenuItem_Click(object sender, EventArgs e)
         { // itinerlist.Items.Add("",0);
+            defpicture.SendToBack();
+            destpanel.BringToFront();
+            typeofdestcombobox.Items.Clear();
+            typeofdestcombobox.Items.AddRange(travel.overnightdestinationtypes);
+            
+            //var exactlocation = travel.coord;
             Form addDestDialog = new Form();
             addDestDialog.Text = "Add Destination to your trip";
+            
             //desitination name label
-            Label destinationnamelabel = new Label();
-            destinationnamelabel.Name = "Savelocationlabel";
-            destinationnamelabel.Dock = System.Windows.Forms.DockStyle.Top;
-            destinationnamelabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            destinationnamelabel.Location = new System.Drawing.Point(1, 10);
-            destinationnamelabel.TabIndex = 3;
-            destinationnamelabel.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            destinationnamelabel.Text = "Enter the name of your destination: ";
-            destinationnamelabel.Size = new Size(20, 40);
+            Label destinationnamelabel = new Label
+            {
+                Name = "Savelocationlabel",
+                Dock = System.Windows.Forms.DockStyle.Top,
+                Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
+                Location = new System.Drawing.Point(1, 10),
+                TabIndex = 3,
+                TextAlign = System.Drawing.ContentAlignment.TopLeft,
+                Text = "Enter the name of your destination: ",
+                Size = new Size(20, 40)
+            };
             // textbox to input basic destination data
-            TextBox desttextnametextbox = new TextBox();
-            desttextnametextbox.Name = "Savelocationlabel";
-            desttextnametextbox.Dock = System.Windows.Forms.DockStyle.Top;
-            desttextnametextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            desttextnametextbox.Location = new System.Drawing.Point(10, 10);
-            desttextnametextbox.TabIndex = 3;
-            desttextnametextbox.TextAlign = (HorizontalAlignment)ContentAlignment.TopLeft;//BADBADBADBABDBDBAD ---JS 20230910
-            desttextnametextbox.Text = "";
-            desttextnametextbox.Size = new Size(20, 40);
+            TextBox desttextnametextbox = new TextBox
+            {
+                Name = "Savelocationlabel",
+                Dock = System.Windows.Forms.DockStyle.Top,
+                Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
+                Location = new System.Drawing.Point(10, 10),
+                TabIndex = 3,
+                TextAlign = (HorizontalAlignment)ContentAlignment.TopLeft,//BADBADBADBABDBDBAD ---JS 20230910 //Update: less bad, just mediocre ---JS 20230918
+                Text = "",
+                Size = new Size(20, 40)
+            };
+            //selection of type of destination + relevant label
+
+            Label typesofdestlabel = new Label
+            {
+                Name = "typesofdestlabel",
+                Dock = System.Windows.Forms.DockStyle.Top,
+                Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
+                Location = new System.Drawing.Point(1, 10),
+                TabIndex = 3,
+                TextAlign = System.Drawing.ContentAlignment.TopLeft,
+                Text = "Select the type of destination: ",
+                Size = new Size(20, 40)
+            };
+            System.Windows.Forms.ComboBox typeofdestcomboboxondialog = new System.Windows.Forms.ComboBox
+            {
+                Name = "typeofdestcomboboxondialog",
+                Dock = System.Windows.Forms.DockStyle.Top,
+                Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
+                Location = new System.Drawing.Point(1, 10),
+                TabIndex = 3,
+                Size = new Size(20, 40)
+            };
+            for (int k=0; travel.overnightdestinationtypes.Length > k; k++ )
+            {
+                typeofdestcomboboxondialog.Items.Add(travel.overnightdestinationtypes[k] );
+            }
+            //weblink label and textbox
+            Label weblinkintakelabel = new Label
+            {
+                Name = "nameofdestlabelondialog",
+                Dock = System.Windows.Forms.DockStyle.Top,
+                Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
+                Location = new System.Drawing.Point(1, 10),
+                TabIndex = 3,
+                TextAlign = System.Drawing.ContentAlignment.TopLeft,
+                Text = "Enter a relevant web link of your destination: ",
+                Size = new Size(20, 40)
+            };
+            TextBox weblinktextbox = new TextBox
+            {
+                Name = "nameofdestlabeltargetondialog",
+                Dock = System.Windows.Forms.DockStyle.Top,
+                Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
+                Location = new System.Drawing.Point(10, 10),
+                TabIndex = 3,
+                TextAlign = (HorizontalAlignment)ContentAlignment.TopLeft,
+                Text = "",
+                Size = new Size(20, 40)
+            };
+            //for destination coordinates and label: needs to also take in data
+            Label locationofdestlabel = new Label
+            {
+                Name = "nameofdestlabelondialog",
+                Dock = System.Windows.Forms.DockStyle.Top,
+                Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
+                Location = new System.Drawing.Point(1, 10),
+                TabIndex = 3,
+                TextAlign = System.Drawing.ContentAlignment.TopLeft,
+                Text = "Enter a the exact location of your destination: ",
+                Size = new Size(20, 40)
+            };
+            TextBox locationofdesttextbox = new TextBox
+            {
+                Name = "nameofdestlabeltargetondialog",
+                Dock = System.Windows.Forms.DockStyle.Top,
+                Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
+                Location = new System.Drawing.Point(10, 10),
+                TabIndex = 3,
+                TextAlign = (HorizontalAlignment)ContentAlignment.TopLeft,
+                Text = "",
+                Size = new Size(20, 40)
+            };
             //submit button
             System.Windows.Forms.Button submitsavelocation = new System.Windows.Forms.Button();
             submitsavelocation.Location = new System.Drawing.Point(10, 10);
@@ -165,19 +263,44 @@ namespace pathfinder
             submitsavelocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             submitsavelocation.Text = "Submit";
             datastring = desttextnametextbox.Text;
-            submitsavelocation.Click += onclick_submit_datastring; //like........... legally? ---JS 20230910
-
-            
-            //do not alter the order of these control adds, make break function  ---JS 20230910
-            addDestDialog.Controls.Add(desttextnametextbox);
+            //submitsavelocation.Click += onclick_submit_datastring; //like........... legally? ---JS 20230910
+            submitsavelocation.Click += textBox_Leave;
+            //do not alter the order of these control adds, may break function  ---JS 20230910
             addDestDialog.Controls.Add(destinationnamelabel);
+            addDestDialog.Controls.Add(desttextnametextbox);
+            addDestDialog.Controls.Add(typesofdestlabel);
+            addDestDialog.Controls.Add(typeofdestcomboboxondialog);
+            addDestDialog.Controls.Add(weblinkintakelabel);
+            addDestDialog.Controls.Add(weblinktextbox);
+            addDestDialog.Controls.Add(locationofdestlabel);
+            addDestDialog.Controls.Add(locationofdesttextbox);
             addDestDialog.Controls.Add(submitsavelocation);
 
-            desttextnametextbox.BringToFront();
             destinationnamelabel.BringToFront();
+            desttextnametextbox.BringToFront();
+            typesofdestlabel.BringToFront();
+            typeofdestcomboboxondialog.BringToFront();
+            weblinkintakelabel.BringToFront();
+            weblinktextbox.BringToFront();
+            locationofdestlabel.BringToFront();
+            locationofdesttextbox.BringToFront();
             submitsavelocation.BringToFront();
 
             addDestDialog.ShowDialog();
+            addDestDialog.AutoSize = true;
+            addDestDialog.PerformAutoScale();
+            addDestDialog.Refresh();
+            void textBox_Leave(object sender, EventArgs e)
+            {
+                if (desttextnametextbox.Text.Length > 0)
+                {
+                    onclick_submit_datastring(desttextnametextbox.Text, typeofdestcomboboxondialog.Text, weblinktextbox.Text, locationofdesttextbox.Text); // hopefully this bypasses events, also thank that SFBS bing ai for suggesting this ---JS 20230918
+                }
+            }
         }
+
+    
+
     }
-}
+
+    }
