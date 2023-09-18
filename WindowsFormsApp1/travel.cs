@@ -4,8 +4,11 @@ using System.Data.Common;
 namespace pathfinder { 
 	// praise whatever God(s) you choose or don't, regardless, pls pls pls pls!! do not remove static keywords!!!!! ---JS 20230827
 public class travel
-{
-	public struct coord //inates, used to simplify saving of precise location data ---JS 20230827
+{// string destinationtypes is here so it can be seen from other files upon build ---JS20230918
+	public static string[] overnightdestinationtypes = { "Hotel", "Motel", "Short-Term Rental", "Campsite", "RV Park" };
+	public static string[] destinationtypes = { "Other", "Park", "Muesem" };
+
+    public struct coord //inates, used to simplify saving of precise location data ---JS 20230827
 		{
 		public static string[] Coords(string Latitude, string Longitude, string cntrycode)
 		{  // import and set for struct
@@ -38,13 +41,12 @@ public class travel
 		// may not be needed, alternatively may need refactoring ---js 20230827
 		public readonly override string ToString() => $"({startingairportcode}, {destinationairportcode})";
 	}
-	public struct destination
+	public struct overnightdestination
 	{
-		public string setdestinationtype(int code)
+		public string setovernightdestinationtype(int code)
 		{// sets type of destination traveller(s) rest at, must be extended later ---JS 20230918
 		 // I nearly wrote a FUCKING SWITCH statement til I thought of this im a so so so foolish ---JS 20230918
-			String[] destinationtypes = { "Hotel", "Motel", "Short-Term Rental", "Campsite", "RV Park" };
-			return destinationtypes[code];
+			return travel.overnightdestinationtypes[code];
 		}
 		public string nameofdest { get; set; }
 		public string typeofdestination { get; set; }
@@ -55,7 +57,17 @@ public class travel
 		public readonly string fetchweblink() => $"{weblink}";
         //public readonly string fetchlocationofdest => $"{nameofdest}";
 		//public readonly string fetchnameofdest => $"{nameofdest}";
+    }
+	public struct destination
+	{ // for day activities and non overnight stays ---JS 20230918
+		public string setdestinationtype(int code) {
+			return travel.destinationtypes[code];
         }
+		public string nameofdest { get; set; }
+		public string typeofdestination { get; set; }
+		public readonly string fetchnameofdest() => $"{nameofdest}";
+		public readonly string fetchtypeofdestination() => $"{typeofdestination}";
+	}
 
 	public void createdest()
 	{
