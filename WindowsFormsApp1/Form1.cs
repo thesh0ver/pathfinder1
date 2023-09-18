@@ -14,14 +14,12 @@ using TextBox = System.Windows.Forms.TextBox;
 
 namespace pathfinder
 {
-    
     public partial class mainformbox : Form
     {
         public static string savelocationstring = "";
         public static string datastring = "";
         public System.Windows.Forms.TextBox savelocationtextbox = new System.Windows.Forms.TextBox();
         System.Windows.Forms.TextBox textboxforItinitem = new System.Windows.Forms.TextBox();
-
         public mainformbox()
         {
             InitializeComponent();
@@ -38,7 +36,7 @@ namespace pathfinder
         { // passes information from the textbox to save function under testing --- JS 20230828
             string itinerary = textBox1.Text;
             Program.saveitinerary(itinerary);
-        }                
+        }
         public void onclickaddItinITEM(object sender, EventArgs e)
         {
             itinerlist.Items.Add(textboxforItinitem.Text, 0);
@@ -49,7 +47,7 @@ namespace pathfinder
         }
         public void setSaveLocationToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
             Form savelocationdialog = new Form();
             savelocationdialog.Text = "Set Save Location";
             // create label for dialog
@@ -61,7 +59,7 @@ namespace pathfinder
             locationsetlabel.TabIndex = 3;
             locationsetlabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             locationsetlabel.Text = "Save location for data: ";
-            locationsetlabel.Size = new Size(20,40);
+            locationsetlabel.Size = new Size(20, 40);
             // create textbox
             // moved savelocationtextbox generator outside function to validate onclick funtcion
             savelocationtextbox.AcceptsReturn = true;
@@ -130,10 +128,14 @@ namespace pathfinder
             itineraryAddDialog.ShowDialog();
 
         }
-        public void onclick_submit_datastring(object sender, EventArgs e)
+        public void onclick_submit_datastring(string jfsgnkjdfsnkjj)
+        { // for value jfsgnkjdfsnkjj, sets itinerlist's to have that value added to the list ---JS 20230918
+            itinerlist.Items.Add(jfsgnkjdfsnkjj, 0);
+            Program.saveitinerary(jfsgnkjdfsnkjj);
+        }
+        public void onclick_submit_destination()
         {
-            itinerlist.Items.Add(datastring, 0);
-            Program.saveitinerary(datastring);
+            //jnfdjn
         }
         private void addDestinationToolStripMenuItem_Click(object sender, EventArgs e)
         { // itinerlist.Items.Add("",0);
@@ -167,12 +169,13 @@ namespace pathfinder
             submitsavelocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             submitsavelocation.Text = "Submit";
             datastring = desttextnametextbox.Text;
-            submitsavelocation.Click += onclick_submit_datastring; //like........... legally? ---JS 20230910
+            //submitsavelocation.Click += onclick_submit_datastring; //like........... legally? ---JS 20230910
+            submitsavelocation.Click += textBox_Leave;
 
-            
+
             //do not alter the order of these control adds, make break function  ---JS 20230910
-            addDestDialog.Controls.Add(desttextnametextbox);
             addDestDialog.Controls.Add(destinationnamelabel);
+            addDestDialog.Controls.Add(desttextnametextbox);
             addDestDialog.Controls.Add(submitsavelocation);
 
             desttextnametextbox.BringToFront();
@@ -180,6 +183,16 @@ namespace pathfinder
             submitsavelocation.BringToFront();
 
             addDestDialog.ShowDialog();
+            void textBox_Leave(object sender, EventArgs e)
+            {
+                if (desttextnametextbox.Text.Length > 0)
+                {
+                    onclick_submit_datastring(desttextnametextbox.Text); // hopefully this bypasses events, also thank that SFBS bing ai for suggesting this ---JS 20230918
+                }
+            }
         }
+
+
     }
-}
+
+    }
