@@ -142,7 +142,8 @@ namespace pathfinder
             //Select(combostring); //= combostring;// typeofdestcombobox
             weblinklabeltarget.Text = weblinkstring;
             coordlocationofdestlabeltarget.Text = coordstring;
-            Program.saveitinerary(destnamestring);
+            string savestring = destnamestring + combostring + weblinkstring + coordstring;
+            Program.saveitinerary(savestring);
         }
         public void onclick_submit_destination()
         {

@@ -5,6 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static pathfinder.stupidfuckingbullshitevents;
+using System.Runtime;
+using System.Drawing;
+using System.Data;
 
 namespace pathfinder
 {
@@ -23,15 +26,69 @@ namespace pathfinder
 
         public static void saveitinerary( string itinerary) // function that would save a itinerary 
         { // the var usersavepath needs to be a retargetable function that would easily changable, but not easily unmutatble IYKWIM ---JS 20230828
-            string usersavepath = @"C:\Users\james\source\repos\test.txt";
-            if(!File.Exists(usersavepath)) // should be deprecated ---JS 20230904
+            string usersavepath = "";
+            string usersavepath0 = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            try // Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            {                
+                string specificFolder = Path.Combine("%APPDATA%", "pathfinder");
+                Directory.CreateDirectory(specificFolder);
+                //usersavepath += specificFolder;
+            }
+            catch (Exception ex )
             {
-                // Create a file to write to.
-                using (StreamWriter sw = File.CreateText(usersavepath))
+                //fuck ---JS 20230919
+            }
+            finally
+            {
+                //mainformbox.
+                string dynamicname = System.DateTime.Today.ToString();
+                dynamicname=dynamicname.Trim();
+                dynamicname=dynamicname.Replace(" ", "");
+                dynamicname = dynamicname.Remove(11);
+                usersavepath ="%APPDATA%\\pathfinder\\"+ dynamicname+ ".txt";//"\\" +
+            }
+
+             // to save to current path, could also do :System.Reflection.Assembly.GetExecutingAssembly().Location;
+            if (!File.Exists(usersavepath)) // should be deprecated ---JS 20230904
+            {
+                try
                 {
-                    sw.WriteLine(itinerary);
+                    //File.Create(usersavepath);
+                    //var filewip = File.OpenWrite(usersavepath);
+                    using (StreamWriter writer = File.CreateText(usersavepath))
+                    {
+                        writer.Write(itinerary);
+                        writer.Close();
+                    }
+                    
                 }
+                catch (Exception ex)
+                {
+                    //no issues ---JS 20230920
+                    Form failuredialog = new Form();
+                    Label locationofdestlabel = new Label
+                    {
+                        Name = "nameofdestlabelondialog",
+                        Dock = System.Windows.Forms.DockStyle.Top,
+                        Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0))),
+                        Location = new System.Drawing.Point(1, 10),
+                        TabIndex = 3,
+                        TextAlign = System.Drawing.ContentAlignment.TopLeft,
+                        Text = ex.ToString(),
+                        Size = new Size(20, 40)
+                    };
+                    failuredialog.Controls.Add(locationofdestlabel);
+                    failuredialog.ShowDialog();
+                    failuredialog.AutoSize = true;
+                    failuredialog.PerformAutoScale();
+                    failuredialog.Refresh();
+                }
+                // Create a file to write to.             
             }/**/
+            else
+            {
+                
+            }
         }
         public static void binarysave(int date, string data) // saves user data in a binary format b/c i dont know how to implement shtuff properly ---JS 20230904
         { // may not work properly when theres already a existing file, but thats a later problem---JS 20230904
@@ -62,7 +119,7 @@ namespace pathfinder
             {
                 using( StreamReader srbinary = bytes)//File.OpenRead(filetoloadlocation)
                 { 
-                    dataloaded = (string)srbinary.ReadToEnd(); 
+                    dataloaded += (string)srbinary.ReadToEnd(); 
                 }
             }
 
