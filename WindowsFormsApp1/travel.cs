@@ -5,7 +5,7 @@ namespace pathfinder {
 	// praise whatever God(s) you choose or don't, regardless, pls pls pls pls!! do not remove static keywords!!!!! ---JS 20230827
 public class travel
 {// string destinationtypes is here so it can be seen from other files upon build ---JS20230918
-	public static string[] overnightdestinationtypes = { "Hotel", "Motel", "Short-Term Rental", "Campsite", "RV Park" };
+	public static string[] overnightdestinationtypes = { "Hotel", "Motel", "Short-Term Rental", "Campsite", "RV Park", "Relative's House" };
 	public static string[] destinationtypes = { "Other", "Park", "Muesem" };
 
     public struct coord //inates, used to simplify saving of precise location data ---JS 20230827
@@ -129,8 +129,19 @@ public class travel
 		var startlocation = coord.Coords(lat0, lon0, ccode0); 
 		var finallocation = coord.Coords(lat1, lon1, ccode1);
 	}
-	
-	
-	
-	}
+    public bool locationcheck(string lat0, string lon0, string ccode0, string lat1, string lon1, string ccode1)
+    { // checks if starting location and final location are the same
+        if (lat0.Equals(lat1) || lon0.Equals(lon1) || ccode0.Equals(ccode1))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+		}
+
+    }
+
+
+    }
 }
