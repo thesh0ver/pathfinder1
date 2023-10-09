@@ -25,6 +25,7 @@ namespace pathfinder
             InitializeComponent();
             defpicture.BringToFront();
             destpanel.SendToBack();
+            //insert panel here . send to back ()
         }
         public void loadDefaultScreenToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -149,11 +150,11 @@ namespace pathfinder
         {
             //jnfdjn
         }
-        private void addDestinationToolStripMenuItem_Click(object sender, EventArgs e)
+        private void addDestinationToolStripMenuItem_Click(object sender, EventArgs e) // add overnight destination ---JS 2023-10-01
         { // itinerlist.Items.Add("",0);
             defpicture.SendToBack();
             destpanel.BringToFront();
-            typeofdestcombobox.Items.Clear();
+            //typeofdestcombobox.Items.Clear();
             typeofdestcombobox.Items.AddRange(travel.overnightdestinationtypes);
             
             //var exactlocation = travel.coord;
