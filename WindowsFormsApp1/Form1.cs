@@ -206,7 +206,7 @@ namespace pathfinder
                 Size = new Size(20, 40)
             };
             for (int k=0; travel.overnightdestinationtypes.Length > k; k++ )
-            {
+            { // adds items into the combo box ---JS 2023-10-03
                 typeofdestcomboboxondialog.Items.Add(travel.overnightdestinationtypes[k] );
             }
             //weblink label and textbox
