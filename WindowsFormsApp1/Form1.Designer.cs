@@ -34,6 +34,24 @@
             this.iterarycalendar = new System.Windows.Forms.MonthCalendar();
             this.itinerlist = new System.Windows.Forms.ListView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.travelpanel = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.travelparty = new System.Windows.Forms.Label();
+            this.typeoftravellabel = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.finallocpanel = new System.Windows.Forms.Panel();
+            this.addrlabel1 = new System.Windows.Forms.Label();
+            this.countrylabel1 = new System.Windows.Forms.Label();
+            this.longlabel1 = new System.Windows.Forms.Label();
+            this.latlabel1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.startlocpanel = new System.Windows.Forms.Panel();
+            this.addrlabel0 = new System.Windows.Forms.Label();
+            this.countrylabel0 = new System.Windows.Forms.Label();
+            this.longlabel0 = new System.Windows.Forms.Label();
+            this.latlabel0 = new System.Windows.Forms.Label();
+            this.coordpanellabel = new System.Windows.Forms.Label();
+            this.travelpanellabel = new System.Windows.Forms.Label();
             this.destpanel = new System.Windows.Forms.Panel();
             this.typeofdestcombobox = new System.Windows.Forms.ComboBox();
             this.destimage = new System.Windows.Forms.PictureBox();
@@ -76,8 +94,13 @@
             this.testlabel = new System.Windows.Forms.Label();
             this.testsubmit = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.travelpanel.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.finallocpanel.SuspendLayout();
+            this.startlocpanel.SuspendLayout();
             this.destpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.destimage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.defpicture)).BeginInit();
@@ -94,7 +117,7 @@
             this.groupBox1.Size = new System.Drawing.Size(243, 710);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Iterary List";
+            this.groupBox1.Text = "Itinerary List";
             // 
             // curiterary
             // 
@@ -126,6 +149,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.travelpanel);
             this.groupBox2.Controls.Add(this.destpanel);
             this.groupBox2.Controls.Add(this.defpicture);
             this.groupBox2.Location = new System.Drawing.Point(261, 27);
@@ -134,6 +158,186 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Details";
+            // 
+            // travelpanel
+            // 
+            this.travelpanel.Controls.Add(this.panel1);
+            this.travelpanel.Controls.Add(this.finallocpanel);
+            this.travelpanel.Controls.Add(this.startlocpanel);
+            this.travelpanel.Controls.Add(this.travelpanellabel);
+            this.travelpanel.Location = new System.Drawing.Point(6, 20);
+            this.travelpanel.Name = "travelpanel";
+            this.travelpanel.Size = new System.Drawing.Size(763, 681);
+            this.travelpanel.TabIndex = 9;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.comboBox2);
+            this.panel1.Controls.Add(this.travelparty);
+            this.panel1.Controls.Add(this.typeoftravellabel);
+            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Location = new System.Drawing.Point(22, 25);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(427, 280);
+            this.panel1.TabIndex = 4;
+            // 
+            // travelparty
+            // 
+            this.travelparty.AutoSize = true;
+            this.travelparty.Location = new System.Drawing.Point(15, 64);
+            this.travelparty.Name = "travelparty";
+            this.travelparty.Size = new System.Drawing.Size(87, 13);
+            this.travelparty.TabIndex = 5;
+            this.travelparty.Text = "Travellers Count:";
+            // 
+            // typeoftravellabel
+            // 
+            this.typeoftravellabel.AutoSize = true;
+            this.typeoftravellabel.Location = new System.Drawing.Point(15, 26);
+            this.typeoftravellabel.Name = "typeoftravellabel";
+            this.typeoftravellabel.Size = new System.Drawing.Size(76, 13);
+            this.typeoftravellabel.TabIndex = 4;
+            this.typeoftravellabel.Text = "Type of Travel";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Flight",
+            "Train",
+            "Automotive",
+            "Ferry",
+            "Bus",
+            "Public Transit",
+            "Walk",
+            "Other"});
+            this.comboBox1.Location = new System.Drawing.Point(112, 18);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 3;
+            // 
+            // finallocpanel
+            // 
+            this.finallocpanel.Controls.Add(this.addrlabel1);
+            this.finallocpanel.Controls.Add(this.countrylabel1);
+            this.finallocpanel.Controls.Add(this.longlabel1);
+            this.finallocpanel.Controls.Add(this.latlabel1);
+            this.finallocpanel.Controls.Add(this.label5);
+            this.finallocpanel.Location = new System.Drawing.Point(481, 183);
+            this.finallocpanel.Name = "finallocpanel";
+            this.finallocpanel.Size = new System.Drawing.Size(269, 122);
+            this.finallocpanel.TabIndex = 2;
+            // 
+            // addrlabel1
+            // 
+            this.addrlabel1.AutoSize = true;
+            this.addrlabel1.Location = new System.Drawing.Point(9, 91);
+            this.addrlabel1.Name = "addrlabel1";
+            this.addrlabel1.Size = new System.Drawing.Size(45, 13);
+            this.addrlabel1.TabIndex = 5;
+            this.addrlabel1.Text = "Address";
+            // 
+            // countrylabel1
+            // 
+            this.countrylabel1.AutoSize = true;
+            this.countrylabel1.Location = new System.Drawing.Point(9, 71);
+            this.countrylabel1.Name = "countrylabel1";
+            this.countrylabel1.Size = new System.Drawing.Size(43, 13);
+            this.countrylabel1.TabIndex = 4;
+            this.countrylabel1.Text = "Country";
+            // 
+            // longlabel1
+            // 
+            this.longlabel1.AutoSize = true;
+            this.longlabel1.Location = new System.Drawing.Point(9, 52);
+            this.longlabel1.Name = "longlabel1";
+            this.longlabel1.Size = new System.Drawing.Size(54, 13);
+            this.longlabel1.TabIndex = 3;
+            this.longlabel1.Text = "Longitude";
+            // 
+            // latlabel1
+            // 
+            this.latlabel1.AutoSize = true;
+            this.latlabel1.Location = new System.Drawing.Point(9, 32);
+            this.latlabel1.Name = "latlabel1";
+            this.latlabel1.Size = new System.Drawing.Size(45, 13);
+            this.latlabel1.TabIndex = 2;
+            this.latlabel1.Text = "Latitude";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(-3, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(73, 13);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Final Location";
+            // 
+            // startlocpanel
+            // 
+            this.startlocpanel.Controls.Add(this.addrlabel0);
+            this.startlocpanel.Controls.Add(this.countrylabel0);
+            this.startlocpanel.Controls.Add(this.longlabel0);
+            this.startlocpanel.Controls.Add(this.latlabel0);
+            this.startlocpanel.Controls.Add(this.coordpanellabel);
+            this.startlocpanel.Location = new System.Drawing.Point(481, 21);
+            this.startlocpanel.Name = "startlocpanel";
+            this.startlocpanel.Size = new System.Drawing.Size(269, 122);
+            this.startlocpanel.TabIndex = 1;
+            // 
+            // addrlabel0
+            // 
+            this.addrlabel0.AutoSize = true;
+            this.addrlabel0.Location = new System.Drawing.Point(9, 91);
+            this.addrlabel0.Name = "addrlabel0";
+            this.addrlabel0.Size = new System.Drawing.Size(45, 13);
+            this.addrlabel0.TabIndex = 5;
+            this.addrlabel0.Text = "Address";
+            // 
+            // countrylabel0
+            // 
+            this.countrylabel0.AutoSize = true;
+            this.countrylabel0.Location = new System.Drawing.Point(9, 71);
+            this.countrylabel0.Name = "countrylabel0";
+            this.countrylabel0.Size = new System.Drawing.Size(43, 13);
+            this.countrylabel0.TabIndex = 4;
+            this.countrylabel0.Text = "Country";
+            // 
+            // longlabel0
+            // 
+            this.longlabel0.AutoSize = true;
+            this.longlabel0.Location = new System.Drawing.Point(9, 52);
+            this.longlabel0.Name = "longlabel0";
+            this.longlabel0.Size = new System.Drawing.Size(54, 13);
+            this.longlabel0.TabIndex = 3;
+            this.longlabel0.Text = "Longitude";
+            // 
+            // latlabel0
+            // 
+            this.latlabel0.AutoSize = true;
+            this.latlabel0.Location = new System.Drawing.Point(9, 32);
+            this.latlabel0.Name = "latlabel0";
+            this.latlabel0.Size = new System.Drawing.Size(45, 13);
+            this.latlabel0.TabIndex = 2;
+            this.latlabel0.Text = "Latitude";
+            // 
+            // coordpanellabel
+            // 
+            this.coordpanellabel.AutoSize = true;
+            this.coordpanellabel.Location = new System.Drawing.Point(-3, 0);
+            this.coordpanellabel.Name = "coordpanellabel";
+            this.coordpanellabel.Size = new System.Drawing.Size(87, 13);
+            this.coordpanellabel.TabIndex = 0;
+            this.coordpanellabel.Text = "Starting Location";
+            // 
+            // travelpanellabel
+            // 
+            this.travelpanellabel.AutoSize = true;
+            this.travelpanellabel.Location = new System.Drawing.Point(-3, 0);
+            this.travelpanellabel.Name = "travelpanellabel";
+            this.travelpanellabel.Size = new System.Drawing.Size(37, 13);
+            this.travelpanellabel.TabIndex = 0;
+            this.travelpanellabel.Text = "Travel";
             // 
             // destpanel
             // 
@@ -340,31 +544,31 @@
             // flightToolStripMenuItem
             // 
             this.flightToolStripMenuItem.Name = "flightToolStripMenuItem";
-            this.flightToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.flightToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
             this.flightToolStripMenuItem.Text = "Flight";
             // 
             // trainToolStripMenuItem
             // 
             this.trainToolStripMenuItem.Name = "trainToolStripMenuItem";
-            this.trainToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.trainToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
             this.trainToolStripMenuItem.Text = "Train";
             // 
             // busToolStripMenuItem
             // 
             this.busToolStripMenuItem.Name = "busToolStripMenuItem";
-            this.busToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.busToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
             this.busToolStripMenuItem.Text = "Bus";
             // 
             // otherToolStripMenuItem
             // 
             this.otherToolStripMenuItem.Name = "otherToolStripMenuItem";
-            this.otherToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.otherToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
             this.otherToolStripMenuItem.Text = "Other";
             // 
             // testToolStripMenuItem
             // 
             this.testToolStripMenuItem.Name = "testToolStripMenuItem";
-            this.testToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.testToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
             this.testToolStripMenuItem.Text = "Test";
             // 
             // addDestinationToolStripMenuItem
@@ -479,13 +683,25 @@
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 5;
             // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Item 1",
+            "Item ",
+            "2"});
+            this.comboBox2.Location = new System.Drawing.Point(112, 64);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 21);
+            this.comboBox2.TabIndex = 6;
+            // 
             // mainformbox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1045, 749);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.testlabel);
             this.Controls.Add(this.textBox1);
@@ -496,6 +712,14 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            this.travelpanel.ResumeLayout(false);
+            this.travelpanel.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.finallocpanel.ResumeLayout(false);
+            this.finallocpanel.PerformLayout();
+            this.startlocpanel.ResumeLayout(false);
+            this.startlocpanel.PerformLayout();
             this.destpanel.ResumeLayout(false);
             this.destpanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.destimage)).EndInit();
@@ -556,6 +780,25 @@
         private System.Windows.Forms.PictureBox defpicture;
         private System.Windows.Forms.ToolStripMenuItem loadDefaultScreenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.Panel travelpanel;
+        private System.Windows.Forms.Label travelpanellabel;
+        private System.Windows.Forms.Panel startlocpanel;
+        private System.Windows.Forms.Label countrylabel0;
+        private System.Windows.Forms.Label longlabel0;
+        private System.Windows.Forms.Label latlabel0;
+        private System.Windows.Forms.Label coordpanellabel;
+        private System.Windows.Forms.Panel finallocpanel;
+        private System.Windows.Forms.Label addrlabel1;
+        private System.Windows.Forms.Label countrylabel1;
+        private System.Windows.Forms.Label longlabel1;
+        private System.Windows.Forms.Label latlabel1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label addrlabel0;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label typeoftravellabel;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label travelparty;
+        private System.Windows.Forms.ComboBox comboBox2;
     }
 }
 
