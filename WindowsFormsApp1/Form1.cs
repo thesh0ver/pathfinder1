@@ -150,7 +150,7 @@ namespace pathfinder
         {
             //jnfdjn
         }
-        private void addDestinationToolStripMenuItem_Click(object sender, EventArgs e) // add overnight destination ---JS 2023-10-01
+        public void addDestinationToolStripMenuItem_Click(object sender, EventArgs e) // add overnight destination ---JS 2023-10-01
         { // itinerlist.Items.Add("",0);
             defpicture.SendToBack();
             destpanel.BringToFront();
@@ -301,8 +301,15 @@ namespace pathfinder
             }
         }
 
-    
+        public void addTravelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            travelpanel.BringToFront();
+        }
 
+        public void additintravelbutton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
     }
