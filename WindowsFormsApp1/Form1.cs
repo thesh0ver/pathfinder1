@@ -10,13 +10,18 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Runtime.InteropServices;
 using TextBox = System.Windows.Forms.TextBox;
-///using System.Reflection.Emit;
+using System.Reflection.Emit;
+using System.Data.OleDb;
+using Label = System.Windows.Forms.Label;
+//using Label = System.Reflection.Emit.Label;
 
 namespace pathfinder
 {
     public partial class mainformbox : Form
     {
-        public static string savelocationstring = "";
+        //used to connect to the database file and whatnot //  CHOPPED AND SKEWED UP *insert rae stremmurd lyrics here* ---JS 20231013
+        public string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\james\\source\\repos\\kfsjdbfkjbsefkjbfskdj\\pathfinder1\\WindowsFormsApp1\\pathfinder0.accdb";
+        public static string savelocationstring = ""; //hopefully deprecated ---JS 20231013
         public static string datastring = "";
         public System.Windows.Forms.TextBox savelocationtextbox = new System.Windows.Forms.TextBox();
         System.Windows.Forms.TextBox textboxforItinitem = new System.Windows.Forms.TextBox();
@@ -58,15 +63,17 @@ namespace pathfinder
             Form savelocationdialog = new Form();
             savelocationdialog.Text = "Set Save Location";
             // create label for dialog
-            Label locationsetlabel = new Label();
-            locationsetlabel.Name = "Savelocationlabel";
-            locationsetlabel.Dock = System.Windows.Forms.DockStyle.Top;
-            locationsetlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            locationsetlabel.Location = new System.Drawing.Point(1, 10);
-            locationsetlabel.TabIndex = 3;
-            locationsetlabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            locationsetlabel.Text = "Save location for data: ";
-            locationsetlabel.Size = new Size(20, 40);
+            Label locationsetlabel = new Label
+            {
+                Name = "Savelocationlabel",
+                Dock = System.Windows.Forms.DockStyle.Top,
+                Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
+                Location = new System.Drawing.Point(1, 10),
+                TabIndex = 3,
+                TextAlign = System.Drawing.ContentAlignment.TopCenter,
+                Text = "Save location for data: ",
+                Size = new Size(20, 40)
+            };
             // create textbox
             // moved savelocationtextbox generator outside function to validate onclick funtcion
             savelocationtextbox.AcceptsReturn = true;
@@ -145,10 +152,6 @@ namespace pathfinder
             coordlocationofdestlabeltarget.Text = coordstring;
             string savestring = destnamestring + combostring + weblinkstring + coordstring;
             Program.saveitinerary(savestring);
-        }
-        public void onclick_submit_destination()
-        {
-            //jnfdjn
         }
         public void addDestinationToolStripMenuItem_Click(object sender, EventArgs e) // add overnight destination ---JS 2023-10-01
         { // itinerlist.Items.Add("",0);
@@ -308,6 +311,79 @@ namespace pathfinder
 
         public void additintravelbutton_Click(object sender, EventArgs e)
         {
+
+        }
+
+        public void viewISO3166Alpha3DatasetToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int loadfromdataset(string connectionString77) 
+            { // copied from the internet to count items in a dataset, slightly modified by me ---JS 20231013
+                string queryString = "SELECT ccodes FROM iso3166ccodes";
+                int countitemsindataset = 0;
+                using (OleDbConnection connection = new OleDbConnection(connectionString77))
+                { // I have no actual clue how this functions though in full disclosure ---JS 20231013
+                    OleDbCommand command = new OleDbCommand(queryString, connection);
+                    connection.Open();
+                    OleDbDataReader reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        countitemsindataset++;
+                    }
+                    // always call Close when done reading. also returns count of stuff
+                    reader.Close();
+                    return countitemsindataset;
+                }
+            }
+            //var exactlocation = travel.coord;
+            Form viewdatadialog = new Form();
+            viewdatadialog.Text = "See the data, like really get a good look, c'mon i know you really want to you curious george";
+            int datalengthcount = loadfromdataset(connectionString);
+            //desitination name label
+            System.Windows.Forms.Label dataview = new Label
+            {
+                Name = "dataview0",
+                Dock = System.Windows.Forms.DockStyle.Top,
+                Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
+                Location = new System.Drawing.Point(1, 10),
+                TabIndex = 3,
+                TextAlign = System.Drawing.ContentAlignment.TopLeft,
+                Text = "",
+                Size = new Size(20, 40)
+            };
+            int itemsindataset = loadfromdataset(connectionString);
+            string queryString = "SELECT ccode FROM iso3166ccodes";
+            try
+            {
+                using (OleDbConnection connection = new OleDbConnection(connectionString))
+                {
+                    OleDbCommand command = new OleDbCommand(queryString, connection);
+                    connection.Open();
+                    OleDbDataReader reader = command.ExecuteReader();
+                    while (reader.Read()) 
+                    {
+                        for (global::System.Int32 i = 0; i < reader.FieldCount; i++)
+                        {
+                            dataview.Text += $"\n{reader.GetString(3)}";
+                        }
+                    }
+                    reader.Close();
+                }
+            }
+            catch
+            {
+
+            }
+            finally
+            {
+                dataview.Text = "REEEEE THERES a little error";
+            }
+            viewdatadialog.Controls.Add(dataview);
+            dataview.BringToFront();
+            viewdatadialog.ShowDialog();
+            viewdatadialog.AutoSize = true;
+            viewdatadialog.PerformAutoScale();
+            viewdatadialog.Refresh();
 
         }
     }
