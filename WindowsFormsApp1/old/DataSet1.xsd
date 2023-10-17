@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="pathfinderConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="pathfinderConnectionString (Settings)" PropertyReference="ApplicationSettings.PathFinder.Properties.Settings.GlobalReference.Default.pathfinderConnectionString" Provider="System.Data.OleDb" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="DataSet1" msprop:Generator_DataSetName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="countrycodes" msprop:Generator_RowEvHandlerName="countrycodesRowChangeEventHandler" msprop:Generator_RowDeletedName="countrycodesRowDeleted" msprop:Generator_RowDeletingName="countrycodesRowDeleting" msprop:Generator_RowEvArgName="countrycodesRowChangeEvent" msprop:Generator_TablePropName="countrycodes" msprop:Generator_RowChangedName="countrycodesRowChanged" msprop:Generator_RowChangingName="countrycodesRowChanging" msprop:Generator_TableClassName="countrycodesDataTable" msprop:Generator_RowClassName="countrycodesRow" msprop:Generator_TableVarName="tablecountrycodes" msprop:Generator_UserTableName="countrycodes">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ccode" msprop:Generator_ColumnPropNameInRow="ccode" msprop:Generator_ColumnPropNameInTable="ccodeColumn" msprop:Generator_ColumnVarNameInTable="columnccode" msprop:Generator_UserColumnName="ccode" type="xs:string" />
+              <xs:element name="longname" msprop:Generator_ColumnPropNameInRow="longname" msprop:Generator_ColumnPropNameInTable="longnameColumn" msprop:Generator_ColumnVarNameInTable="columnlongname" msprop:Generator_UserColumnName="longname" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="itinerary" msprop:Generator_RowEvHandlerName="itineraryRowChangeEventHandler" msprop:Generator_RowDeletedName="itineraryRowDeleted" msprop:Generator_RowDeletingName="itineraryRowDeleting" msprop:Generator_RowEvArgName="itineraryRowChangeEvent" msprop:Generator_TablePropName="itinerary" msprop:Generator_RowChangedName="itineraryRowChanged" msprop:Generator_RowChangingName="itineraryRowChanging" msprop:Generator_TableClassName="itineraryDataTable" msprop:Generator_RowClassName="itineraryRow" msprop:Generator_TableVarName="tableitinerary" msprop:Generator_UserTableName="itinerary">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="item_id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msdata:Caption="ID" msprop:Generator_ColumnPropNameInRow="item_id" msprop:Generator_ColumnPropNameInTable="item_idColumn" msprop:Generator_ColumnVarNameInTable="columnitem_id" msprop:Generator_UserColumnName="item_id" type="xs:int" />
+              <xs:element name="item_type" msdata:Caption="itinerary" msprop:Generator_ColumnPropNameInRow="item_type" msprop:Generator_ColumnPropNameInTable="item_typeColumn" msprop:Generator_ColumnVarNameInTable="columnitem_type" msprop:Generator_UserColumnName="item_type" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="536870910" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:countrycodes" />
+      <xs:field xpath="mstns:ccode" />
+    </xs:unique>
+    <xs:unique name="itinerary_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:itinerary" />
+      <xs:field xpath="mstns:item_id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
