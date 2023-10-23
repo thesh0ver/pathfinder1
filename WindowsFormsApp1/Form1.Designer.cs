@@ -117,6 +117,7 @@
             this.testlabel = new System.Windows.Forms.Label();
             this.testsubmit = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.viewISO3166Alpha3DatasetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.travelpanel.SuspendLayout();
@@ -238,9 +239,9 @@
             this.panel1.Controls.Add(this.travelcountlabel);
             this.panel1.Controls.Add(this.methodoftravellabel);
             this.panel1.Controls.Add(this.methodtravelcomboBox);
-            this.panel1.Location = new System.Drawing.Point(22, 25);
+            this.panel1.Location = new System.Drawing.Point(22, 21);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(510, 370);
+            this.panel1.Size = new System.Drawing.Size(510, 374);
             this.panel1.TabIndex = 4;
             // 
             // clearfinaldatebutton
@@ -429,9 +430,9 @@
             // 
             // finalsavelocationbutton
             // 
-            this.finalsavelocationbutton.Location = new System.Drawing.Point(17, 117);
+            this.finalsavelocationbutton.Location = new System.Drawing.Point(62, 117);
             this.finalsavelocationbutton.Name = "finalsavelocationbutton";
-            this.finalsavelocationbutton.Size = new System.Drawing.Size(163, 23);
+            this.finalsavelocationbutton.Size = new System.Drawing.Size(152, 23);
             this.finalsavelocationbutton.TabIndex = 12;
             this.finalsavelocationbutton.Text = "Save Location";
             this.finalsavelocationbutton.UseVisualStyleBackColor = true;
@@ -504,7 +505,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(-3, 0);
+            this.label5.Location = new System.Drawing.Point(-4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(73, 13);
             this.label5.TabIndex = 0;
@@ -530,46 +531,46 @@
             // 
             // startsavelocationbutton
             // 
-            this.startsavelocationbutton.Location = new System.Drawing.Point(17, 117);
+            this.startsavelocationbutton.Location = new System.Drawing.Point(62, 117);
             this.startsavelocationbutton.Name = "startsavelocationbutton";
-            this.startsavelocationbutton.Size = new System.Drawing.Size(163, 23);
+            this.startsavelocationbutton.Size = new System.Drawing.Size(152, 23);
             this.startsavelocationbutton.TabIndex = 10;
             this.startsavelocationbutton.Text = "Save Location";
             this.startsavelocationbutton.UseVisualStyleBackColor = true;
             // 
             // startaddrtextbox
             // 
-            this.startaddrtextbox.Location = new System.Drawing.Point(75, 91);
+            this.startaddrtextbox.Location = new System.Drawing.Point(62, 91);
             this.startaddrtextbox.Multiline = true;
             this.startaddrtextbox.Name = "startaddrtextbox";
-            this.startaddrtextbox.Size = new System.Drawing.Size(139, 20);
+            this.startaddrtextbox.Size = new System.Drawing.Size(152, 20);
             this.startaddrtextbox.TabIndex = 9;
             // 
             // startcountrytextbox
             // 
-            this.startcountrytextbox.Location = new System.Drawing.Point(75, 65);
+            this.startcountrytextbox.Location = new System.Drawing.Point(62, 65);
             this.startcountrytextbox.Name = "startcountrytextbox";
-            this.startcountrytextbox.Size = new System.Drawing.Size(139, 20);
+            this.startcountrytextbox.Size = new System.Drawing.Size(152, 20);
             this.startcountrytextbox.TabIndex = 8;
             // 
             // startlongtextbox
             // 
-            this.startlongtextbox.Location = new System.Drawing.Point(75, 42);
+            this.startlongtextbox.Location = new System.Drawing.Point(62, 40);
             this.startlongtextbox.Name = "startlongtextbox";
-            this.startlongtextbox.Size = new System.Drawing.Size(139, 20);
+            this.startlongtextbox.Size = new System.Drawing.Size(152, 20);
             this.startlongtextbox.TabIndex = 7;
             // 
             // startlattextbox
             // 
-            this.startlattextbox.Location = new System.Drawing.Point(75, 15);
+            this.startlattextbox.Location = new System.Drawing.Point(62, 15);
             this.startlattextbox.Name = "startlattextbox";
-            this.startlattextbox.Size = new System.Drawing.Size(139, 20);
+            this.startlattextbox.Size = new System.Drawing.Size(152, 20);
             this.startlattextbox.TabIndex = 6;
             // 
             // addrlabel0
             // 
             this.addrlabel0.AutoSize = true;
-            this.addrlabel0.Location = new System.Drawing.Point(23, 91);
+            this.addrlabel0.Location = new System.Drawing.Point(3, 94);
             this.addrlabel0.Name = "addrlabel0";
             this.addrlabel0.Size = new System.Drawing.Size(51, 13);
             this.addrlabel0.TabIndex = 5;
@@ -578,7 +579,7 @@
             // countrylabel0
             // 
             this.countrylabel0.AutoSize = true;
-            this.countrylabel0.Location = new System.Drawing.Point(25, 65);
+            this.countrylabel0.Location = new System.Drawing.Point(5, 65);
             this.countrylabel0.Name = "countrylabel0";
             this.countrylabel0.Size = new System.Drawing.Size(49, 13);
             this.countrylabel0.TabIndex = 4;
@@ -587,7 +588,7 @@
             // longlabel0
             // 
             this.longlabel0.AutoSize = true;
-            this.longlabel0.Location = new System.Drawing.Point(11, 45);
+            this.longlabel0.Location = new System.Drawing.Point(3, 45);
             this.longlabel0.Name = "longlabel0";
             this.longlabel0.Size = new System.Drawing.Size(60, 13);
             this.longlabel0.TabIndex = 3;
@@ -596,7 +597,7 @@
             // latlabel0
             // 
             this.latlabel0.AutoSize = true;
-            this.latlabel0.Location = new System.Drawing.Point(19, 21);
+            this.latlabel0.Location = new System.Drawing.Point(5, 18);
             this.latlabel0.Name = "latlabel0";
             this.latlabel0.Size = new System.Drawing.Size(51, 13);
             this.latlabel0.TabIndex = 2;
@@ -787,7 +788,8 @@
             // 
             this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.saveIteraryToolStripMenuItem,
-            this.loadIteraryToolStripMenuItem});
+            this.loadIteraryToolStripMenuItem,
+            this.viewISO3166Alpha3DatasetToolStripMenuItem});
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
             this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.optionsToolStripMenuItem.Text = "Options";
@@ -939,6 +941,13 @@
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 5;
             // 
+            // viewISO3166Alpha3DatasetToolStripMenuItem
+            // 
+            this.viewISO3166Alpha3DatasetToolStripMenuItem.Name = "viewISO3166Alpha3DatasetToolStripMenuItem";
+            this.viewISO3166Alpha3DatasetToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
+            this.viewISO3166Alpha3DatasetToolStripMenuItem.Text = "View ISO3166 Alpha-3 Dataset";
+            this.viewISO3166Alpha3DatasetToolStripMenuItem.Click += new System.EventHandler(this.viewISO3166Alpha3DatasetToolStripMenuItem_Click);
+            // 
             // mainformbox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1067,6 +1076,7 @@
         private System.Windows.Forms.PictureBox travelpanelimage0;
         private System.Windows.Forms.Button clearfinaldatebutton;
         private System.Windows.Forms.Button clearstartdatebutton;
+        private System.Windows.Forms.ToolStripMenuItem viewISO3166Alpha3DatasetToolStripMenuItem;
     }
 }
 

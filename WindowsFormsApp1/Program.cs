@@ -8,6 +8,8 @@ using static pathfinder.stupidfuckingbullshitevents;
 using System.Runtime;
 using System.Drawing;
 using System.Data;
+using System.Data.OleDb;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace pathfinder
 {
@@ -23,7 +25,52 @@ namespace pathfinder
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new mainformbox());
         }
+        public static int countloadfromdataset(string connectionString77)
+        { // copied from the internet to count items in a dataset, slightly modified by me ---JS 20231013
+                string queryString = "SELECT ccodes FROM iso3166ccodes";
+                int countitemsindataset = 0;
+                using (OleDbConnection connection = new OleDbConnection(connectionString77))
+                { // I have no actual clue how this functions though in full disclosure ---JS 20231013
+                    OleDbCommand command = new OleDbCommand(queryString, connection);
+                    connection.Open();
+                    OleDbDataReader reader = command.ExecuteReader();
 
+                    while (reader.Read())
+                    {
+                        countitemsindataset++;
+                    }
+                    // always call Close when done reading. also returns count of stuff
+                    reader.Close();
+                    return countitemsindataset;
+                }
+        }
+        public static string[] loadfromdataset(string connectionString77)
+        { // copied from the internet to count items in a dataset, slightly modified by me ---JS 20231013
+            string queryString = "SELECT ccodes FROM iso3166ccodes";
+            string[] itemsindataset = new string[] { };
+            using (OleDbConnection connection = new OleDbConnection(connectionString77))
+            { // I have no actual clue how this functions though in full disclosure ---JS 20231013
+                OleDbCommand command = new OleDbCommand(queryString, connection);
+                connection.Open();
+                OleDbDataReader reader = command.ExecuteReader();
+                
+                while (reader.Read())
+                {
+                    for (global::System.Int32 i = 0; i < reader.FieldCount; i++)
+                    {
+
+                        itemsindataset.Append<string>($"\n{reader.GetValue(i)}");
+                    }
+                }
+                // always call Close when done reading. also returns count of stuff
+                reader.Close();
+                return itemsindataset;
+            }
+        }
+        public static void toadataset(string connectionString77, string queryString)
+        {
+
+        }
         public static void saveitinerary( string itinerary) // function that would save a itinerary 
         { // the var usersavepath needs to be a retargetable function that would easily changable, but not easily unmutatble IYKWIM ---JS 20230828
             string usersavepath = "";
