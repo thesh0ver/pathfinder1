@@ -13,6 +13,7 @@ using TextBox = System.Windows.Forms.TextBox;
 using System.Reflection.Emit;
 using System.Data.OleDb;
 using Label = System.Windows.Forms.Label;
+using System.Runtime.Remoting.Messaging;
 //using Label = System.Reflection.Emit.Label;
 
 namespace pathfinder
@@ -353,30 +354,47 @@ namespace pathfinder
             };
             int itemsindataset = loadfromdataset(connectionString);
             string queryString = "SELECT ccode FROM iso3166ccodes";
+            int test = 0;
             try
             {
-                using (OleDbConnection connection = new OleDbConnection(connectionString))
-                {
-                    OleDbCommand command = new OleDbCommand(queryString, connection);
-                    connection.Open();
-                    OleDbDataReader reader = command.ExecuteReader();
-                    while (reader.Read()) 
+                //using ()
+                //{
+                OleDbConnection connection = new OleDbConnection(connectionString);
+                test++;    
+                connection.Open();
+                test++;
+                OleDbCommand command = new OleDbCommand(queryString, connection);
+                test++;
+                command.Prepare();
+                test++;
+                OleDbDataReader reader = command.ExecuteReader(); // error on this line:
+                //no value given for one of the parameters ---JS 2023-10-18
+                test++;
+                while (reader.Read()) 
                     {
-                        for (global::System.Int32 i = 0; i < reader.FieldCount; i++)
+                    test++;
+                    for (global::System.Int32 i = 0; i < reader.FieldCount; i++)
                         {
-                            dataview.Text += $"\n{reader.GetString(3)}";
+                        test++;
+                        dataview.Text += $"\n{reader.GetValue(i)}";
                         }
+                        //reader.
                     }
                     reader.Close();
-                }
+                test++;
+                connection.Close();
+                test++;
+                //}
             }
-            catch
+            catch (Exception ex)
             {
-
+                dataview.Text += $"Value of {test} ";
+                dataview.Text +=  $"\n{ex} ";
+                
             }
             finally
             {
-                dataview.Text = "REEEEE THERES a little error";
+                dataview.Text += "\nActually kinda a big one.";
             }
             viewdatadialog.Controls.Add(dataview);
             dataview.BringToFront();
