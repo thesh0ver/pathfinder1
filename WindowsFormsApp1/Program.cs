@@ -7,9 +7,11 @@ using System.Windows.Forms;
 using static pathfinder.stupidfuckingbullshitevents;
 using System.Runtime;
 using System.Drawing;
+using System.Globalization;
 using System.Data;
 using System.Data.OleDb;
 using static System.Net.Mime.MediaTypeNames;
+using Application = System.Windows.Forms.Application;
 
 namespace pathfinder
 {
@@ -67,9 +69,16 @@ namespace pathfinder
                 return itemsindataset;
             }
         }
-        public static void toadataset(string connectionString77, string queryString)
+        public static void savingitertake1(string connectionString77, string[] queryString)
         {
-
+            using (OleDbConnection connection = new OleDbConnection(connectionString77))
+            {
+                connection.Open();
+                OleDbDataAdapter adapter = new OleDbDataAdapter(); ///string[] queryString
+                
+                //ds.
+                //adapter.Update();
+            }
         }
         public static void saveitinerary( string itinerary) // function that would save a itinerary 
         { // the var usersavepath needs to be a retargetable function that would easily changable, but not easily unmutatble IYKWIM ---JS 20230828
@@ -193,5 +202,60 @@ namespace pathfinder
             datapasstime?.Invoke(this, e);
         }*/
     }
-    
+    public partial class CurrencyConverter
+    {
+        public string[] GetCurrencyTags()
+        {
+            string[] currenytags = { "eur", "usd", "jpy", "bgn", "czk", "dkk", "gbp", "huf", "ltl", "lvl", "pln", "ron", "sek", "chf", "nok", "hrk", "rub", "try", "aud", "brl", "cad", "cny", "hkd", "idr", "ils", "inr", "krw", "mxn", "myr", "nzd", "php", "sgd", "zar" };
+            return currenytags;
+        }
+        public static float GetCurrencyRateInUSD(string currency)
+        {
+            if (currency.ToLower() == "")
+                throw new ArgumentException("Invalid Argument! Currency parameter cannot be empty!");
+            if (currency.ToLower() == "usd")
+                throw new ArgumentException("Invalid Argument! Cannot get exchange rate from USD to USD");
+            try
+            {
+                string rssUrl = string.Concat("https://www.calculator.net/currency-calculator.html" + ".html");
+            }
+            catch { return 0; }
+            return 0;
+        }
+
+        public string ToLower()
+        {
+            throw new NotImplementedException();
+        }
+
+        public static float GetExchangeRate(string from, string to, float amount = 1)
+        {
+            if (from == null || to == null)
+                return 0;
+            if (from.ToLower() == "usd" && to.ToLower() == "usd")
+                return amount;
+            try
+            {
+                float toRate = GetCurrencyRateInUSD(to);
+                float fromRate = GetCurrencyRateInUSD(from);
+                if (from.ToLower() == "usd")
+                {
+                    return (amount * toRate);
+                }
+                else if (to.ToLower() == "usd")
+                {
+                    return (amount * fromRate);
+                }
+
+            }
+            catch { return 0; }
+            return 0;
+        }
+
+        /*private float GetCurrencyRateInUSD(string from)
+    {
+        throw new NotImplementedException();
+
+    }*/
+    }
 }

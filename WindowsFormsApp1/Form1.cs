@@ -353,7 +353,7 @@ namespace pathfinder
                 Size = new Size(20, 40)
             };
             int itemsindataset = loadfromdataset(connectionString);
-            string queryString = "SELECT ccode FROM iso3166ccodes";
+            string queryString = "SELECT * FROM iso3166ccodes";
             int test = 0;
             try
             {
@@ -361,26 +361,32 @@ namespace pathfinder
                 //{
                 OleDbConnection connection = new OleDbConnection(connectionString);
                 test++;    
-                connection.Open();
-                test++;
                 OleDbCommand command = new OleDbCommand(queryString, connection);
+                test++;
+                connection.Open();
                 test++;
                 command.Prepare();
                 test++;
                 OleDbDataReader reader = command.ExecuteReader(); // error on this line:
                 //no value given for one of the parameters ---JS 2023-10-18
                 test++;
-                while (reader.Read()) 
-                    {
+                int i = 0;
+                while (reader.Read())
+                {
+                    dataview.Text += $"\n{reader.GetValue(i)} ";
+                    i++;
                     test++;
-                    for (global::System.Int32 i = 0; i < reader.FieldCount; i++)
+                    /*for (
+                        global::System.Int32 i = 0; i < (reader.FieldCount - 1); i++)
                         {
+                    
                         test++;
-                        dataview.Text += $"\n{reader.GetValue(i)}";
-                        }
+                        
+                        //reader.Read();
+                        }*/
                         //reader.
-                    }
-                    reader.Close();
+                }
+                reader.Close();
                 test++;
                 connection.Close();
                 test++;

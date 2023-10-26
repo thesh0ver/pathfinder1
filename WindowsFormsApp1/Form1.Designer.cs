@@ -99,6 +99,7 @@
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveIteraryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadIteraryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewISO3166Alpha3DatasetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.iteraryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addTravelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addDestinationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -117,7 +118,6 @@
             this.testlabel = new System.Windows.Forms.Label();
             this.testsubmit = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.viewISO3166Alpha3DatasetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.travelpanel.SuspendLayout();
@@ -174,9 +174,9 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.travelpanel);
-            this.groupBox2.Controls.Add(this.destpanel);
             this.groupBox2.Controls.Add(this.defpicture);
+            this.groupBox2.Controls.Add(this.destpanel);
+            this.groupBox2.Controls.Add(this.travelpanel);
             this.groupBox2.Location = new System.Drawing.Point(261, 27);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(772, 710);
@@ -633,6 +633,7 @@
             // 
             // destpanel
             // 
+            this.destpanel.Controls.Add(this.nameofdestlabel);
             this.destpanel.Controls.Add(this.typeofdestcombobox);
             this.destpanel.Controls.Add(this.destimage);
             this.destpanel.Controls.Add(this.coordlocationofdestlabeltarget);
@@ -641,7 +642,6 @@
             this.destpanel.Controls.Add(this.weblinklabeltarget);
             this.destpanel.Controls.Add(this.Destlabelpanel);
             this.destpanel.Controls.Add(this.typeofdestinationlabel);
-            this.destpanel.Controls.Add(this.nameofdestlabel);
             this.destpanel.Controls.Add(this.nameofdestlabeltarget);
             this.destpanel.Location = new System.Drawing.Point(6, 25);
             this.destpanel.Name = "destpanel";
@@ -797,14 +797,21 @@
             // saveIteraryToolStripMenuItem
             // 
             this.saveIteraryToolStripMenuItem.Name = "saveIteraryToolStripMenuItem";
-            this.saveIteraryToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.saveIteraryToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
             this.saveIteraryToolStripMenuItem.Text = "Save Itinerary";
             // 
             // loadIteraryToolStripMenuItem
             // 
             this.loadIteraryToolStripMenuItem.Name = "loadIteraryToolStripMenuItem";
-            this.loadIteraryToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.loadIteraryToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
             this.loadIteraryToolStripMenuItem.Text = "Load Itinerary";
+            // 
+            // viewISO3166Alpha3DatasetToolStripMenuItem
+            // 
+            this.viewISO3166Alpha3DatasetToolStripMenuItem.Name = "viewISO3166Alpha3DatasetToolStripMenuItem";
+            this.viewISO3166Alpha3DatasetToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
+            this.viewISO3166Alpha3DatasetToolStripMenuItem.Text = "View ISO3166 Alpha-3 Dataset";
+            this.viewISO3166Alpha3DatasetToolStripMenuItem.Click += new System.EventHandler(this.viewISO3166Alpha3DatasetToolStripMenuItem_Click);
             // 
             // iteraryToolStripMenuItem
             // 
@@ -940,13 +947,6 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 5;
-            // 
-            // viewISO3166Alpha3DatasetToolStripMenuItem
-            // 
-            this.viewISO3166Alpha3DatasetToolStripMenuItem.Name = "viewISO3166Alpha3DatasetToolStripMenuItem";
-            this.viewISO3166Alpha3DatasetToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
-            this.viewISO3166Alpha3DatasetToolStripMenuItem.Text = "View ISO3166 Alpha-3 Dataset";
-            this.viewISO3166Alpha3DatasetToolStripMenuItem.Click += new System.EventHandler(this.viewISO3166Alpha3DatasetToolStripMenuItem_Click);
             // 
             // mainformbox
             // 
