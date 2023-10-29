@@ -21,7 +21,7 @@ namespace pathfinder
     public partial class mainformbox : Form
     {
         //used to connect to the database file and whatnot //  CHOPPED AND SKEWED UP *insert rae stremmurd lyrics here* ---JS 20231013
-        public string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\james\\source\\repos\\kfsjdbfkjbsefkjbfskdj\\pathfinder1\\WindowsFormsApp1\\pathfinder0.accdb";
+        public string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\james\\source\\repos\\WindowsFormsApp1\\WindowsFormsApp1\\pathfinder0.accdb";
         public static string savelocationstring = ""; //hopefully deprecated ---JS 20231013
         public static string datastring = "";
         public System.Windows.Forms.TextBox savelocationtextbox = new System.Windows.Forms.TextBox();
@@ -172,7 +172,7 @@ namespace pathfinder
                 Dock = System.Windows.Forms.DockStyle.Top,
                 Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
                 Location = new System.Drawing.Point(1, 10),
-                TabIndex = 3,
+                TabIndex = 0,
                 TextAlign = System.Drawing.ContentAlignment.TopLeft,
                 Text = "Enter the name of your destination: ",
                 Size = new Size(20, 40)
@@ -184,7 +184,7 @@ namespace pathfinder
                 Dock = System.Windows.Forms.DockStyle.Top,
                 Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
                 Location = new System.Drawing.Point(10, 10),
-                TabIndex = 3,
+                TabIndex = 1,
                 TextAlign = (HorizontalAlignment)ContentAlignment.TopLeft,//BADBADBADBABDBDBAD ---JS 20230910 //Update: less bad, just mediocre ---JS 20230918
                 Text = "",
                 Size = new Size(20, 40)
@@ -197,7 +197,7 @@ namespace pathfinder
                 Dock = System.Windows.Forms.DockStyle.Top,
                 Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
                 Location = new System.Drawing.Point(1, 10),
-                TabIndex = 3,
+                TabIndex = 0,
                 TextAlign = System.Drawing.ContentAlignment.TopLeft,
                 Text = "Select the type of destination: ",
                 Size = new Size(20, 40)
@@ -208,7 +208,7 @@ namespace pathfinder
                 Dock = System.Windows.Forms.DockStyle.Top,
                 Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
                 Location = new System.Drawing.Point(1, 10),
-                TabIndex = 3,
+                TabIndex = 2,
                 Size = new Size(20, 40)
             };
             for (int k=0; travel.overnightdestinationtypes.Length > k; k++ )
@@ -222,7 +222,7 @@ namespace pathfinder
                 Dock = System.Windows.Forms.DockStyle.Top,
                 Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
                 Location = new System.Drawing.Point(1, 10),
-                TabIndex = 3,
+                TabIndex = 0,
                 TextAlign = System.Drawing.ContentAlignment.TopLeft,
                 Text = "Enter a relevant web link of your destination: ",
                 Size = new Size(20, 40)
@@ -245,7 +245,7 @@ namespace pathfinder
                 Dock = System.Windows.Forms.DockStyle.Top,
                 Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
                 Location = new System.Drawing.Point(1, 10),
-                TabIndex = 3,
+                TabIndex = 0,
                 TextAlign = System.Drawing.ContentAlignment.TopLeft,
                 Text = "Enter a the exact location of your destination: ",
                 Size = new Size(20, 40)
@@ -256,7 +256,7 @@ namespace pathfinder
                 Dock = System.Windows.Forms.DockStyle.Top,
                 Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
                 Location = new System.Drawing.Point(10, 10),
-                TabIndex = 3,
+                TabIndex = 4,
                 TextAlign = (HorizontalAlignment)ContentAlignment.TopLeft,
                 Text = "",
                 Size = new Size(20, 40)
