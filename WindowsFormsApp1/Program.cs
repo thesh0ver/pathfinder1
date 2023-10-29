@@ -10,6 +10,7 @@ using System.Drawing;
 using System.Data;
 using System.Data.OleDb;
 using static System.Net.Mime.MediaTypeNames;
+using Application = System.Windows.Forms.Application;
 
 namespace pathfinder
 {
@@ -81,9 +82,8 @@ namespace pathfinder
                 Directory.CreateDirectory(specificFolder);
                 //usersavepath += specificFolder;
             }
-            catch (Exception ex )
+            catch (Exception) // does so much ---JS2023-10-23
             {
-                //fuck ---JS 20230919
             }
             finally
             {
