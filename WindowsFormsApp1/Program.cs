@@ -90,9 +90,8 @@ namespace pathfinder
                 Directory.CreateDirectory(specificFolder);
                 //usersavepath += specificFolder;
             }
-            catch (Exception ex )
+            catch (Exception) // does so much ---JS2023-10-23
             {
-                //fuck ---JS 20230919
             }
             finally
             {
